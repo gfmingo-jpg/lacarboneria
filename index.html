@@ -811,33 +811,40 @@ function pagarConMP(){
   mpBtn.style.opacity = "0.6";
   mpBtn.style.pointerEvents = "none";
 
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://script.google.com/macros/s/AKfycbzlQ1B65asuzzRDjkM4essTVA5yFgqhuUJcmgWBWtVgurU1T5cKuMe_e4xnW0MRAjmYDw/exec", true);
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState === 4) {
-      try {
-        var resp = JSON.parse(xhr.responseText);
-        if (resp.init_point) {
-          mpBtn.href = resp.init_point;
-        } else {
-          mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
-        }
-      } catch(e) {
+  // Use GET request to avoid CORS issues
+  var getUrl = "https://script.google.com/macros/s/AKfycbzlQ1B65asuzzRDjkM4essTVA5yFgqhuUJcmgWBWtVgurU1T5cKuMe_e4xnW0MRAjmYDw/exec?producto=" + encodeURIComponent(producto) + "&total=" + total + "&nombre=" + encodeURIComponent(nombre) + "&correo=" + encodeURIComponent(correo || "cliente@lacarboneria.cl");
+  
+  var script = document.createElement("script");
+  window._mpCallback = function(data) {
+    if (data && data.init_point) {
+      mpBtn.href = data.init_point;
+    } else {
+      mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
+    }
+    mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
+    mpBtn.style.opacity = "1";
+    mpBtn.style.pointerEvents = "auto";
+    document.body.removeChild(script);
+  };
+
+  fetch(getUrl)
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if (data && data.init_point) {
+        mpBtn.href = data.init_point;
+      } else {
         mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
       }
-      mpBtn.innerHTML = "<span style=\"font-size:1.2rem;\">💳</span> Pagar online con Mercado Pago";
+      mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
       mpBtn.style.opacity = "1";
       mpBtn.style.pointerEvents = "auto";
-    }
-  };
-  xhr.send(JSON.stringify({
-    action: "create_preference",
-    producto: producto,
-    total: total,
-    nombre: nombre,
-    correo: correo
-  }));
+    })
+    .catch(function(){
+      mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
+      mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
+      mpBtn.style.opacity = "1";
+      mpBtn.style.pointerEvents = "auto";
+    });
 
   modal.style.display = "flex";
 }
