@@ -764,13 +764,12 @@ const PRODUCTOS = {
 function fmt(n){ return "$" + Math.round(n).toLocaleString("es-CL"); }
 
 function pagarConMP(){
-  var btn = document.getElementById("btn-mp");
-  var loading = document.getElementById("mp-loading");
-  var nombre = document.getElementById("cot-nombre").value || "Cliente";
-  var correo = document.getElementById("cot-email").value || "cliente@lacarboneria.cl";
   var resTotal = document.getElementById("res-total");
   var resProd = document.getElementById("res-producto");
   var resCant = document.getElementById("res-cantidad");
+  var nombre = document.getElementById("cot-nombre").value || "";
+  var correo = document.getElementById("cot-email").value || "";
+  var telefono = document.getElementById("cot-telefono").value || "";
 
   if(!resTotal || !resTotal.textContent || resTotal.textContent.trim() === ""){
     alert("Por favor completa la cotización primero.");
@@ -779,39 +778,38 @@ function pagarConMP(){
 
   var totalStr = resTotal.textContent.replace(/[^0-9]/g, "");
   var total = parseInt(totalStr);
-  var producto = resProd.textContent + " - " + resCant.textContent;
+  var producto = resProd.textContent;
+  var cantidad = resCant.textContent;
 
-  btn.disabled = true;
-  btn.style.opacity = "0.6";
-  loading.style.display = "block";
-
-  fetch("https://script.google.com/macros/s/AKfycbzlQ1B65asuzzRDjkM4essTVA5yFgqhuUJcmgWBWtVgurU1T5cKuMe_e4xnW0MRAjmYDw/exec", {
-    method: "POST",
-    mode: "no-cors",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({
-      action: "create_preference",
-      producto: producto,
-      total: total,
-      nombre: nombre,
-      correo: correo
-    })
-  })
-  .then(function(){
-    // no-cors means we can't read response, redirect to MP with amount in URL
-    var mpUrl = "https://www.mercadopago.cl/checkout/v1/redirect?pref_id=" + total;
-    // Fallback: open MP link with amount as reference
-    window.open("https://link.mercadopago.cl/pagolacarboneria?amount=" + total + "&description=" + encodeURIComponent(producto), "_blank");
-    btn.disabled = false;
-    btn.style.opacity = "1";
-    loading.style.display = "none";
-  })
-  .catch(function(){
-    window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
-    btn.disabled = false;
-    btn.style.opacity = "1";
-    loading.style.display = "none";
+  // Send cotizacion to sheets first
+  guardarCotizacion({
+    nombre: nombre, correo: correo, telefono: telefono,
+    producto: producto, cantidad: cantidad, unidad: "",
+    modalidad: MODO === "retiro" ? "Retiro en bodega" : "Despacho a domicilio",
+    precioUnitario: 0, neto: 0, iva: 0, total: total
   });
+
+  // Build WhatsApp pre-filled message for payment confirmation
+  var waMsg = encodeURIComponent(
+    "Hola La Carbonería, quiero proceder con el pago de mi cotización:\n" +
+    "• Producto: " + producto + "\n" +
+    "• Cantidad: " + cantidad + "\n" +
+    (nombre ? "• Nombre: " + nombre + "\n" : "") +
+    "• Total a pagar: $" + total.toLocaleString("es-CL") + "\n" +
+    "Por favor indíquenme los pasos para completar el pago."
+  );
+
+  // Show payment options modal
+  var modal = document.getElementById("modal-pago");
+  document.getElementById("modal-total").textContent = "$" + total.toLocaleString("es-CL");
+  document.getElementById("modal-producto").textContent = producto + " · " + cantidad;
+  document.getElementById("modal-wa-link").href = "https://wa.me/56920571175?text=" + waMsg;
+  document.getElementById("modal-mp-link").href = "https://link.mercadopago.cl/pagolacarboneria";
+  modal.style.display = "flex";
+}
+
+function cerrarModal(){
+  document.getElementById("modal-pago").style.display = "none";
 }
 
 function actualizarWA(){
@@ -1176,5 +1174,25 @@ document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
   });
 });
 </script>
+
+<div id="modal-pago" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:2rem;">
+  <div style="background:#fff;max-width:480px;width:100%;padding:2.5rem;position:relative;">
+    <button onclick="cerrarModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--muted);">✕</button>
+    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Resumen de pago</div>
+    <div style="font-family:Bebas Neue,sans-serif;font-size:1.2rem;letter-spacing:1.5px;margin-bottom:0.3rem;" id="modal-producto"></div>
+    <div style="font-family:Bebas Neue,sans-serif;font-size:2.5rem;letter-spacing:2px;color:var(--text);margin-bottom:2rem;" id="modal-total"></div>
+    <div style="height:1px;background:var(--border);margin-bottom:1.5rem;"></div>
+    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Elige cómo pagar</div>
+    <div style="display:flex;flex-direction:column;gap:0.8rem;">
+      <a id="modal-mp-link" href="#" target="_blank" onclick="cerrarModal()" style="display:flex;align-items:center;gap:0.8rem;background:#009EE3;color:#fff;padding:1rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">
+        <span style="font-size:1.2rem;">💳</span> Pagar online con Mercado Pago
+      </a>
+      <a id="modal-wa-link" href="#" target="_blank" onclick="cerrarModal()" style="display:flex;align-items:center;gap:0.8rem;background:#25D366;color:#fff;padding:1rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">
+        <span style="font-size:1.2rem;">💬</span> Coordinar pago por WhatsApp
+      </a>
+      <div style="font-size:0.75rem;color:var(--muted);font-weight:300;text-align:center;margin-top:0.5rem;">También puedes transferir a Banco Santander · Cta Cte 7237951-9 · RUT 76.796.173-1</div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
