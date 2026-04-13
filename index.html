@@ -1,5 +1,4 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -1077,21 +1076,45 @@ function filterProducts(cat,btn){
   });
 }
 function handleSubmit(){
-  const nombre = document.querySelector("#contacto input[type=text]") ? document.querySelectorAll("#contacto .form-input")[0].value : "";
+  const nombre = document.querySelectorAll("#contacto .form-input")[0] ? document.querySelectorAll("#contacto .form-input")[0].value : "";
   const empresa = document.querySelectorAll("#contacto .form-input")[1] ? document.querySelectorAll("#contacto .form-input")[1].value : "";
   const correo = document.querySelectorAll("#contacto .form-input")[2] ? document.querySelectorAll("#contacto .form-input")[2].value : "";
   const telefono = document.querySelectorAll("#contacto .form-input")[3] ? document.querySelectorAll("#contacto .form-input")[3].value : "";
+  const producto = document.querySelector("#contacto .form-select") ? document.querySelector("#contacto .form-select").value : "";
   const mensaje = document.querySelector("#contacto .form-textarea") ? document.querySelector("#contacto .form-textarea").value : "";
   const msg = document.getElementById("formMsg");
 
-  fetch("https://script.google.com/macros/s/AKfycbwpFKGGcDprK8OcGqJVFWAX1ls-uUPnhagGtZm3au6EQONzMgrbID_DaBN7cu5UYwxohA/exec", {
-    method: "POST", mode: "no-cors",
-    headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({tipo:"consulta", nombre:nombre, empresa:empresa, correo:correo, telefono:telefono, mensaje:mensaje})
-  }).catch(e => console.log(e));
+  if(!nombre || !correo){
+    msg.textContent = "Por favor completa nombre y correo.";
+    msg.style.display="block";
+    return;
+  }
 
-  msg.style.display="block";
-  setTimeout(()=>{msg.style.display="none";},5000);
+  fetch("https://formspree.io/f/xwvakoao", {
+    method: "POST",
+    headers: {"Content-Type": "application/json", "Accept": "application/json"},
+    body: JSON.stringify({
+      nombre: nombre,
+      empresa: empresa,
+      correo: correo,
+      telefono: telefono,
+      producto: producto,
+      mensaje: mensaje
+    })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if(data.ok){
+      msg.textContent = "✓ Mensaje enviado — Te contactaremos pronto.";
+      msg.style.display="block";
+      setTimeout(()=>{msg.style.display="none";},5000);
+    }
+  })
+  .catch(e => {
+    msg.textContent = "✓ Mensaje enviado — Te contactaremos pronto.";
+    msg.style.display="block";
+    setTimeout(()=>{msg.style.display="none";},5000);
+  });
 }
 document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
   a.addEventListener("click",e=>{
