@@ -623,9 +623,10 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
             <a id="cot-wa-btn" href="#" target="_blank" style="display:flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;text-decoration:none;">
               <span style="font-size:1.1rem;">💬</span> Confirmar por WhatsApp
             </a>
-            <a href="https://link.mercadopago.cl/pagolacarboneria" target="_blank" style="display:flex;align-items:center;gap:0.6rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;text-decoration:none;">
+            <button onclick="pagarConMP()" id="btn-mp" style="display:flex;align-items:center;gap:0.6rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;border:none;cursor:pointer;width:100%;">
               <span style="font-size:1.1rem;">💳</span> Pagar con Mercado Pago
-            </a>
+            </button>
+            <div id="mp-loading" style="display:none;font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:0.5rem;text-align:center;">Generando link de pago...</div>
           </div>
         </div>
 
@@ -761,6 +762,57 @@ const PRODUCTOS = {
 };
 
 function fmt(n){ return "$" + Math.round(n).toLocaleString("es-CL"); }
+
+function pagarConMP(){
+  var btn = document.getElementById("btn-mp");
+  var loading = document.getElementById("mp-loading");
+  var nombre = document.getElementById("cot-nombre").value || "Cliente";
+  var correo = document.getElementById("cot-email").value || "cliente@lacarboneria.cl";
+  var resTotal = document.getElementById("res-total");
+  var resProd = document.getElementById("res-producto");
+  var resCant = document.getElementById("res-cantidad");
+
+  if(!resTotal || !resTotal.textContent || resTotal.textContent.trim() === ""){
+    alert("Por favor completa la cotización primero.");
+    return;
+  }
+
+  var totalStr = resTotal.textContent.replace(/[^0-9]/g, "");
+  var total = parseInt(totalStr);
+  var producto = resProd.textContent + " - " + resCant.textContent;
+
+  btn.disabled = true;
+  btn.style.opacity = "0.6";
+  loading.style.display = "block";
+
+  fetch("https://script.google.com/macros/s/AKfycbzlQ1B65asuzzRDjkM4essTVA5yFgqhuUJcmgWBWtVgurU1T5cKuMe_e4xnW0MRAjmYDw/exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({
+      action: "create_preference",
+      producto: producto,
+      total: total,
+      nombre: nombre,
+      correo: correo
+    })
+  })
+  .then(function(){
+    // no-cors means we can't read response, redirect to MP with amount in URL
+    var mpUrl = "https://www.mercadopago.cl/checkout/v1/redirect?pref_id=" + total;
+    // Fallback: open MP link with amount as reference
+    window.open("https://link.mercadopago.cl/pagolacarboneria?amount=" + total + "&description=" + encodeURIComponent(producto), "_blank");
+    btn.disabled = false;
+    btn.style.opacity = "1";
+    loading.style.display = "none";
+  })
+  .catch(function(){
+    window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
+    btn.disabled = false;
+    btn.style.opacity = "1";
+    loading.style.display = "none";
+  });
+}
 
 function actualizarWA(){
   // Re-run calcular to refresh WhatsApp link with updated client data
