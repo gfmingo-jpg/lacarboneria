@@ -803,7 +803,9 @@ function pagarConMP(){
   var modal = document.getElementById("modal-pago");
   document.getElementById("modal-total").textContent = "$" + total.toLocaleString("es-CL");
   document.getElementById("modal-producto").textContent = producto + " · " + cantidad;
-  document.getElementById("modal-wa-link").href = "https://wa.me/56920571175?text=" + waMsg;
+  var waUrl = "https://wa.me/56920571175?text=" + waMsg;
+  document.getElementById("modal-wa-link").href = waUrl;
+  document.getElementById("modal-wa-link").setAttribute("data-href", waUrl);
   
   // Build MP preference via Apps Script and get init_point
   var mpBtn = document.getElementById("modal-mp-link");
@@ -841,15 +843,11 @@ function cerrarModal(){
 }
 
 function abrirWA(e){
-  var link = document.getElementById("modal-wa-link");
-  var href = link.href;
-  if(!href || href === window.location.href || href.endsWith("#")){
-    e.preventDefault();
-    return;
-  }
-  cerrarModal();
-  window.open(href, "_blank");
   e.preventDefault();
+  var link = document.getElementById("modal-wa-link");
+  var href = link.getAttribute("data-href") || link.href;
+  cerrarModal();
+  setTimeout(function(){ window.open(href, "_blank"); }, 300);
 }
 
 function actualizarWA(){
@@ -1236,3 +1234,5 @@ document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
 </div>
 </body>
 </html>
+
+
