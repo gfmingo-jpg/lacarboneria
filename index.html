@@ -856,9 +856,27 @@ function cerrarModal(){
 function abrirWA(e){
   e.preventDefault();
   var link = document.getElementById("modal-wa-link");
-  var href = link.getAttribute("data-href") || link.href;
+  var href = link.getAttribute("data-href");
+  if(!href || href === "" || href === "undefined"){
+    // Build WA message from visible results
+    var prod = document.getElementById("res-producto") ? document.getElementById("res-producto").textContent : "";
+    var cant = document.getElementById("res-cantidad") ? document.getElementById("res-cantidad").textContent : "";
+    var total = document.getElementById("res-total") ? document.getElementById("res-total").textContent : "";
+    var nombre = document.getElementById("cot-nombre") ? document.getElementById("cot-nombre").value : "";
+    var correo = document.getElementById("cot-email") ? document.getElementById("cot-email").value : "";
+    var msg = encodeURIComponent(
+      "Hola La Carbonería, quisiera confirmar mi pedido:\n" +
+      (nombre ? "• Nombre: " + nombre + "\n" : "") +
+      (correo ? "• Correo: " + correo + "\n" : "") +
+      "• Producto: " + prod + "\n" +
+      "• Cantidad: " + cant + "\n" +
+      "• Total: " + total + "\n" +
+      "Por favor confirmar disponibilidad y despacho."
+    );
+    href = "https://wa.me/56920571175?text=" + msg;
+  }
   cerrarModal();
-  setTimeout(function(){ window.open(href, "_blank"); }, 300);
+  setTimeout(function(){ window.open(href, "_blank"); }, 200);
 }
 
 function actualizarWA(){
