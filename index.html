@@ -854,61 +854,47 @@ function pagarConMP(){
   var producto = resProd.textContent;
   var cantidad = resCant.textContent;
 
-  // Send cotizacion to sheets first
-  guardarCotizacion({
-    nombre: nombre, correo: correo, telefono: telefono,
-    producto: producto, cantidad: cantidad, unidad: "",
-    modalidad: MODO === "retiro" ? "Retiro en bodega" : "Despacho a domicilio",
-    precioUnitario: 0, neto: 0, iva: 0, total: total
-  });
-
-  // Build WhatsApp pre-filled message for payment confirmation
+  // Build WhatsApp message
   var waMsg = encodeURIComponent(
-    "Hola La Carbonería, quiero proceder con el pago de mi cotización:\n" +
+    "Hola La Carbonería, quiero confirmar mi pedido:\n" +
     "• Producto: " + producto + "\n" +
     "• Cantidad: " + cantidad + "\n" +
     (nombre ? "• Nombre: " + nombre + "\n" : "") +
-    "• Total a pagar: $" + total.toLocaleString("es-CL") + "\n" +
-    "Por favor indíquenme los pasos para completar el pago."
+    "• Total: $" + total.toLocaleString("es-CL") + "\n" +
+    "Por favor confirmar disponibilidad y despacho."
   );
-
-  // Show payment options modal
-  var modal = document.getElementById("modal-pago");
-  document.getElementById("modal-total").textContent = "$" + total.toLocaleString("es-CL");
-  document.getElementById("modal-producto").textContent = producto + " · " + cantidad;
   var waUrl = "https://wa.me/56920571175?text=" + waMsg;
+
+  // Set WA link immediately - no waiting
   document.getElementById("modal-wa-link").href = waUrl;
   document.getElementById("modal-wa-link").setAttribute("data-href", waUrl);
-  
-  // Build MP preference via Apps Script and get init_point
+
+  // Show modal
+  document.getElementById("modal-total").textContent = "$" + total.toLocaleString("es-CL");
+  document.getElementById("modal-producto").textContent = producto + " · " + cantidad;
+
+  // MP button - load asynchronously without blocking WA
   var mpBtn = document.getElementById("modal-mp-link");
-  mpBtn.innerHTML = "⏳ Generando link de pago...";
-  mpBtn.style.opacity = "0.6";
-  mpBtn.style.pointerEvents = "none";
+  mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
+  mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
+  mpBtn.style.opacity = "1";
+  mpBtn.style.pointerEvents = "auto";
 
-  // Call MP via Apps Script (GET to avoid CORS)
-  var mpUrl = "https://script.google.com/macros/s/AKfycbzMpddaHwNyFjkf6u_SGWLE7XRK3_6oHLq9DPbJ52duGcsaGxJfLOes0oXnLjUJixD1/exec?producto=" + encodeURIComponent(producto) + "&total=" + total + "&nombre=" + encodeURIComponent(nombre || "") + "&correo=" + encodeURIComponent(correo || "cliente@lacarboneria.cl");
+  // Show modal immediately
+  document.getElementById("modal-pago").style.display = "flex";
 
-  fetch(mpUrl)
-  .then(function(r){ return r.json(); })
-  .then(function(data){
-    if (data && data.init_point) {
-      mpBtn.href = data.init_point;
-    } else {
-      mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
-    }
-    mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
-    mpBtn.style.opacity = "1";
-    mpBtn.style.pointerEvents = "auto";
-  })
-  .catch(function(){
-    mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
-    mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
-    mpBtn.style.opacity = "1";
-    mpBtn.style.pointerEvents = "auto";
-  });
-
-  modal.style.display = "flex";
+  // Try to get MP preference in background (non-blocking)
+  setTimeout(function(){
+    var mpUrl = "https://script.google.com/macros/s/AKfycbzMpddaHwNyFjkf6u_SGWLE7XRK3_6oHLq9DPbJ52duGcsaGxJfLOes0oXnLjUJixD1/exec?producto=" + encodeURIComponent(producto) + "&total=" + total + "&nombre=" + encodeURIComponent(nombre || "") + "&correo=" + encodeURIComponent(correo || "cliente@lacarboneria.cl");
+    fetch(mpUrl)
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      if(data && data.init_point){
+        mpBtn.href = data.init_point;
+      }
+    })
+    .catch(function(){});
+  }, 100);
 }
 
 function cerrarModal(){
