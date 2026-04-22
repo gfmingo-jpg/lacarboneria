@@ -162,82 +162,88 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
 }
 
 @media(max-width:600px){
+  /* Hamburger */
   #hamburger{display:flex !important;}
-  #nav-links-menu{
-    display:none;
-    position:fixed;
-    top:0;left:0;right:0;bottom:0;
-    background:rgba(255,255,255,0.98);
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:2rem;
-    z-index:9998;
-  }
+  #nav-links-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:9998;}
   #nav-links-menu.open{display:flex !important;}
   #nav-links-menu a{font-size:1.2rem;letter-spacing:3px;}
+  .nav-logo{font-size:1.1rem;}
+  nav{padding:0.7rem 1rem;}
 
-  /* Navigation */
-  nav{padding:0.8rem 1rem;}
-  .nav-logo{font-size:1.2rem;}
-  .nav-links{display:none;}
-  
-  /* WhatsApp float buttons */
-  .wa-float{
-    right:8px !important;
-    bottom:70px !important;
-    gap:6px !important;
-  }
-  .wa-btn{
-    font-size:0.65rem !important;
-    padding:6px 10px !important;
-  }
+  /* Hero compacto */
+  .hero-grid{padding:1.5rem 1rem 1rem !important;min-height:auto !important;}
+  .section-title,.hero-title{font-size:clamp(2rem,10vw,3.5rem) !important;line-height:0.9 !important;}
+  .hero-desc{font-size:0.88rem;margin-bottom:1.2rem !important;line-height:1.5;}
+  .hero-actions{flex-direction:column;gap:0.5rem;}
+  .hero-actions a,.hero-actions button{width:100%;text-align:center;justify-content:center;padding:0.7rem !important;font-size:0.75rem !important;}
 
-  /* Hero */
-  .hero-grid{padding:1.5rem 1rem;}
-  .section-title{font-size:clamp(2.5rem,12vw,5rem) !important;}
-  .hero-desc{font-size:0.95rem;}
-  .hero-actions{flex-direction:column;gap:0.8rem;}
-  .hero-actions a,.hero-actions button{width:100%;text-align:center;justify-content:center;}
+  /* Secciones padding reducido */
+  section{padding:1.8rem 1rem !important;}
+  .container{padding:0 0.8rem !important;}
+  h2.section-title{font-size:clamp(1.6rem,8vw,2.8rem) !important;}
+  .section-number{font-size:3.5rem !important;line-height:1;}
+  .section-label{font-size:0.6rem !important;margin-bottom:0.3rem !important;}
 
-  /* Sections */
-  section{padding:3rem 1rem !important;}
-  .container{padding:0 1rem !important;}
-  
-  /* Products grid */
-  .products-grid{grid-template-columns:1fr !important;}
-  
-  /* Cotizador */
-  .cotizador-inner{grid-template-columns:1fr !important;gap:1.5rem;}
-  .cot-resultado{padding:1.5rem 1rem !important;}
-  
-  /* Stats */
-  .stats-grid{grid-template-columns:repeat(2,1fr) !important;}
-  
-  /* Cobertura */
-  .cobertura-grid{grid-template-columns:1fr !important;}
-  
-  /* Footer */
-  .footer-top{flex-direction:column;gap:2rem;}
-  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+  /* Stats 2x2 compacto */
+  .stats-grid{grid-template-columns:repeat(2,1fr) !important;gap:0.6rem !important;}
+  .stat-item{padding:0.8rem !important;}
+  .stat-number{font-size:1.8rem !important;}
+  .stat-label{font-size:0.65rem !important;}
 
   /* Marquee */
-  .marquee-text{font-size:0.7rem;}
+  .marquee-track{padding:0.5rem 0 !important;}
 
-  /* Section titles */
-  h2.section-title{font-size:clamp(2rem,10vw,4rem) !important;}
-  
-  /* Buttons full width */
-  .btn{width:100%;text-align:center;justify-content:center;display:flex;}
+  /* Productos 1 columna */
+  .products-grid{grid-template-columns:1fr !important;gap:0.8rem !important;}
 
-  /* Contact form */
-  .contact-form input, .contact-form textarea{font-size:16px !important;}
-  
-  /* Map */
-  iframe{height:250px !important;}
+  /* Cotizador */
+  .cotizador-inner{grid-template-columns:1fr !important;gap:0.8rem !important;}
+  .cot-panel{padding:1rem !important;}
+  .cot-resultado{padding:1rem !important;}
 
-  /* Modal pago */
-  #modal-pago > div{padding:1.5rem 1rem !important;margin:1rem;}
+  /* Ventajas compactas - horizontal */
+  .ventajas-grid{grid-template-columns:1fr !important;gap:0 !important;}
+  .ventaja-item{padding:0.8rem 1rem !important;display:flex !important;align-items:center !important;gap:1rem !important;border-bottom:1px solid var(--border);}
+  .ventaja-number{font-size:1.3rem !important;min-width:35px !important;margin-bottom:0 !important;}
+  .ventaja-title{font-size:0.8rem !important;margin-bottom:0.1rem !important;}
+  .ventaja-desc{font-size:0.75rem !important;color:var(--muted);}
+
+  /* Testimonios compactos */
+  .testimonios-grid{grid-template-columns:1fr !important;gap:0.6rem !important;}
+  .testimonio-item{padding:1rem !important;}
+  .testimonio-text{font-size:0.82rem !important;line-height:1.5 !important;}
+
+  /* Cobertura */
+  .cobertura-grid{grid-template-columns:1fr !important;gap:1rem !important;}
+  iframe{height:200px !important;}
+
+  /* FAQ */
+  .faq-item{padding:0.8rem !important;}
+  .faq-question{font-size:0.8rem !important;}
+  .faq-answer{font-size:0.78rem !important;}
+
+  /* Contacto */
+  .contact-layout{grid-template-columns:1fr !important;}
+  .contact-form input,.contact-form textarea,.contact-form select{font-size:16px !important;padding:0.7rem !important;}
+
+  /* Footer */
+  .footer-top{flex-direction:column;gap:1.2rem;}
+  .footer-bottom{flex-direction:column;gap:0.4rem;text-align:center;}
+
+  /* Botones */
+  .btn{width:100%;text-align:center;justify-content:center;display:flex;padding:0.7rem 1rem !important;font-size:0.72rem !important;}
+
+  /* Modal */
+  #modal-pago > div{padding:1.2rem 1rem !important;margin:0.8rem;}
+
+  /* Ocultar elementos decorativos */
+  .custom-cursor,.cursor-ring{display:none !important;}
+
+  /* Ocultar secciones en móvil */
+  section#ventajas{display:none !important;}
+  section#testimonios{display:none !important;}
+  .hero-visual-full{display:none !important;}
+  .marquee-wrap{display:none !important;}
 }
 </style>
 </head>
