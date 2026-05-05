@@ -1037,63 +1037,11 @@ function fmt(n){ return "$" + Math.round(n).toLocaleString("es-CL"); }
 
 function pagarConMP(){
   var resTotal = document.getElementById("res-total");
-  var resProd = document.getElementById("res-producto");
-  var resCant = document.getElementById("res-cantidad");
-  var nombre = document.getElementById("cot-nombre").value || "";
-  var correo = document.getElementById("cot-email").value || "";
-  var telefono = document.getElementById("cot-telefono").value || "";
-
   if(!resTotal || !resTotal.textContent || resTotal.textContent.trim() === ""){
     alert("Por favor completa la cotización primero.");
     return;
   }
-
-  var totalStr = resTotal.textContent.replace(/[^0-9]/g, "");
-  var total = parseInt(totalStr);
-  var producto = resProd.textContent;
-  var cantidad = resCant.textContent;
-
-  // Build WhatsApp message
-  var waMsg = encodeURIComponent(
-    "Hola La Carbonería, quiero confirmar mi pedido:\n" +
-    "• Producto: " + producto + "\n" +
-    "• Cantidad: " + cantidad + "\n" +
-    (nombre ? "• Nombre: " + nombre + "\n" : "") +
-    "• Total: $" + total.toLocaleString("es-CL") + "\n" +
-    "Por favor confirmar disponibilidad y despacho."
-  );
-  var waUrl = "https://wa.me/56920571175?text=" + waMsg;
-
-  // Set WA link immediately - no waiting
-  document.getElementById("modal-wa-link").href = waUrl;
-  document.getElementById("modal-wa-link").setAttribute("data-href", waUrl);
-
-  // Show modal
-  document.getElementById("modal-total").textContent = "$" + total.toLocaleString("es-CL");
-  document.getElementById("modal-producto").textContent = producto + " · " + cantidad;
-
-  // MP button - load asynchronously without blocking WA
-  var mpBtn = document.getElementById("modal-mp-link");
-  mpBtn.href = "https://link.mercadopago.cl/pagolacarboneria";
-  mpBtn.innerHTML = "<span style=\'font-size:1.2rem;\'>💳</span> Pagar online con Mercado Pago";
-  mpBtn.style.opacity = "1";
-  mpBtn.style.pointerEvents = "auto";
-
-  // Show modal immediately
-  document.getElementById("modal-pago").style.display = "flex";
-
-  // Try to get MP preference in background (non-blocking)
-  setTimeout(function(){
-    var mpUrl = "https://script.google.com/macros/s/AKfycbzMpddaHwNyFjkf6u_SGWLE7XRK3_6oHLq9DPbJ52duGcsaGxJfLOes0oXnLjUJixD1/exec?producto=" + encodeURIComponent(producto) + "&total=" + total + "&nombre=" + encodeURIComponent(nombre || "") + "&correo=" + encodeURIComponent(correo || "cliente@lacarboneria.cl");
-    fetch(mpUrl)
-    .then(function(r){ return r.json(); })
-    .then(function(data){
-      if(data && data.init_point){
-        mpBtn.href = data.init_point;
-      }
-    })
-    .catch(function(){});
-  }, 100);
+  window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
 }
 
 function abrirMercadoPago(){
