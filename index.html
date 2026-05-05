@@ -1097,47 +1097,11 @@ function pagarConMP(){
 }
 
 function abrirMercadoPago(){
-  var resTotal = document.getElementById("res-total");
-  var resProd = document.getElementById("res-producto");
-  var resCant = document.getElementById("res-cantidad");
-  var nombre = document.getElementById("cot-nombre").value || "";
-  var correo = document.getElementById("cot-email").value || "";
-
-  if(!resTotal || !resTotal.textContent || resTotal.textContent.trim() === ""){
+  if(!document.getElementById("res-total") || !document.getElementById("res-total").textContent.trim()){
     alert("Por favor completa la cotización primero.");
     return;
   }
-
-  var totalStr = resTotal.textContent.replace(/[^0-9]/g, "");
-  var total = parseInt(totalStr);
-  var producto = resProd.textContent;
-  var cantidad = resCant.textContent;
-
-  var btn = document.getElementById("btn-mp");
-  btn.innerHTML = "<span style=\'font-size:1.1rem;\'>⏳</span> Generando link...";
-  btn.disabled = true;
-  btn.style.opacity = "0.7";
-
-  var mpUrl = "https://script.google.com/macros/s/AKfycbzMpddaHwNyFjkf6u_SGWLE7XRK3_6oHLq9DPbJ52duGcsaGxJfLOes0oXnLjUJixD1/exec?producto=" + encodeURIComponent(producto) + "&total=" + total + "&nombre=" + encodeURIComponent(nombre || "") + "&correo=" + encodeURIComponent(correo || "cliente@lacarboneria.cl");
-
-  fetch(mpUrl, {mode: "cors"})
-  .then(function(r){ return r.json(); })
-  .then(function(data){
-    btn.innerHTML = "<span style=\'font-size:1.1rem;\'>💳</span> Pagar con Mercado Pago";
-    btn.disabled = false;
-    btn.style.opacity = "1";
-    if(data && data.init_point){
-      window.open(data.init_point, "_blank");
-    } else {
-      window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
-    }
-  })
-  .catch(function(){
-    btn.innerHTML = "<span style=\'font-size:1.1rem;\'>💳</span> Pagar con Mercado Pago";
-    btn.disabled = false;
-    btn.style.opacity = "1";
-    window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
-  });
+  window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
 }
 
 function cerrarModal(){
