@@ -628,6 +628,60 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
     </div>
   </div>
 </section>
+    <!-- CALCULADORA DE AHORRO -->
+    <div style="margin-top:3rem;background:#fff;padding:2rem;border-left:4px solid #e8903a;">
+      <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">HERRAMIENTA</div>
+      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;margin-bottom:0.5rem;">¿Cuánto ahorras al mes?</h3>
+      <p style="font-family:Barlow,sans-serif;font-size:0.88rem;color:#666;margin-bottom:1.5rem;">Ingresa tu consumo mensual y te mostramos cuánto puedes ahorrar comprando por volumen.</p>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+        
+        <div>
+          <label style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#888;display:block;margin-bottom:0.4rem;">Producto</label>
+          <select id="calc-producto" onchange="calcularAhorro()" style="width:100%;padding:0.7rem;border:1px solid #e0e0e0;font-family:Barlow,sans-serif;font-size:0.88rem;background:#fff;">
+            <option value="qb_blanco_25">QB Blanco 2,5 kg</option>
+            <option value="qb_colorado_25">QB Colorado 2,5 kg</option>
+            <option value="qb_colorado_2">QB Colorado 2 kg</option>
+            <option value="saco_15">Saco 15 kg QB Blanco</option>
+            <option value="granel">Carbón Granel</option>
+          </select>
+        </div>
+
+        <div>
+          <label style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#888;display:block;margin-bottom:0.4rem;">Consumo mensual</label>
+          <input type="number" id="calc-cantidad" oninput="calcularAhorro()" placeholder="Ej: 100" min="1" style="width:100%;padding:0.7rem;border:1px solid #e0e0e0;font-family:Barlow,sans-serif;font-size:0.88rem;">
+        </div>
+
+        <div>
+          <label style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#888;display:block;margin-bottom:0.4rem;">Precio actual que pagas</label>
+          <input type="number" id="calc-precio-actual" oninput="calcularAhorro()" placeholder="Ej: 2500" min="1" style="width:100%;padding:0.7rem;border:1px solid #e0e0e0;font-family:Barlow,sans-serif;font-size:0.88rem;">
+        </div>
+
+      </div>
+
+      <!-- Resultado -->
+      <div id="calc-resultado" style="display:none;background:#0a0a0a;color:#fff;padding:1.5rem 2rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;text-align:center;">
+        <div>
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:0.3rem;">Precio La Carbonería</div>
+          <div id="calc-nuestro-precio" style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#e8903a;"></div>
+        </div>
+        <div>
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:0.3rem;">Lo que pagas hoy</div>
+          <div id="calc-precio-hoy" style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#666;"></div>
+        </div>
+        <div style="background:#e8903a;padding:1rem;margin:-1.5rem -2rem -1.5rem 0;">
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:0.3rem;">Ahorras al mes</div>
+          <div id="calc-ahorro" style="font-family:Bebas Neue,sans-serif;font-size:2rem;letter-spacing:2px;color:#fff;"></div>
+          <div id="calc-ahorro-año" style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;color:rgba(255,255,255,0.8);margin-top:0.3rem;"></div>
+        </div>
+      </div>
+
+      <div id="calc-sin-datos" style="text-align:center;padding:1rem;color:#aaa;font-family:Barlow,sans-serif;font-size:0.85rem;">
+        Ingresa tu consumo y precio actual para ver el ahorro
+      </div>
+
+    </div>
+
 <!-- CARRITO DE COMPRAS -->
 <section id="carrito" style="background:#f9f9f7;padding:3rem;display:none;">
   <div class="container">
@@ -1173,6 +1227,54 @@ function pagarCarritoMP(){
 }
 // ==================== FIN CARRITO ====================
 
+
+function calcularAhorro(){
+  var prod = document.getElementById("calc-producto").value;
+  var cantidad = parseFloat(document.getElementById("calc-cantidad").value);
+  var precioActual = parseFloat(document.getElementById("calc-precio-actual").value);
+
+  var resultado = document.getElementById("calc-resultado");
+  var sinDatos = document.getElementById("calc-sin-datos");
+
+  if(!cantidad || !precioActual || cantidad <= 0 || precioActual <= 0){
+    resultado.style.display = "none";
+    sinDatos.style.display = "block";
+    return;
+  }
+
+  // Get our price based on product and quantity
+  var p = PRODUCTOS[prod];
+  if(!p){ return; }
+
+  var nuestroprecio = p.precioRetiro; // base price
+  for(var i = 0; i < p.rangos.length; i++){
+    var r = p.rangos[i];
+    if(cantidad >= r.min && cantidad <= r.max){
+      nuestroprecio = r.precio;
+      break;
+    }
+  }
+
+  // Calculate totals with IVA
+  var totalNuestro = Math.round(cantidad * nuestroprecio * 1.19);
+  var totalActual = Math.round(cantidad * precioActual);
+  var ahorro = totalActual - totalNuestro;
+  var ahorroAño = ahorro * 12;
+
+  resultado.style.display = "grid";
+  sinDatos.style.display = "none";
+
+  document.getElementById("calc-nuestro-precio").textContent = "$" + totalNuestro.toLocaleString("es-CL");
+  document.getElementById("calc-precio-hoy").textContent = "$" + totalActual.toLocaleString("es-CL");
+
+  if(ahorro > 0){
+    document.getElementById("calc-ahorro").textContent = "$" + ahorro.toLocaleString("es-CL");
+    document.getElementById("calc-ahorro-año").textContent = "($" + ahorroAño.toLocaleString("es-CL") + " al año)";
+  } else {
+    document.getElementById("calc-ahorro").textContent = "¡Ya tienes el mejor precio!";
+    document.getElementById("calc-ahorro-año").textContent = "";
+  }
+}
 function cerrarModal(){
   document.getElementById("modal-pago").style.display = "none";
 }
