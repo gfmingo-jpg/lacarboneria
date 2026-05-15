@@ -372,7 +372,8 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
     <a href="#nosotros">Nosotros</a>
     <a href="#productos">Productos</a>
     <a href="#ventajas">Ventajas</a>
-    <a href="#registro">Mi perfil</a><a href="#como-comprar">Cómo comprar</a><a href="#cotizador">Cotizador</a><a href="#testimonios">Testimonios</a><a href="#contacto">Contacto</a>
+    <a href="#registro">Mi perfil</a><a href="#como-comprar">Cómo comprar</a><a href="#cotizador">Cotizador</a><a href="#testimonios">Testimonios</a><a href="#blog" style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text);text-decoration:none;">Blog</a>
+        <a href="#contacto">Contacto</a>
   </div>
 </nav>
 <section class="hero" id="inicio">
@@ -1667,6 +1668,19 @@ document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
     </div>
   </div>
 </div>
+
+
+function toggleArticulo(id){
+  var content = document.getElementById(id);
+  var icon = document.getElementById(id + "-icon");
+  if(content.style.display === "none"){
+    content.style.display = "block";
+    icon.textContent = "−";
+  } else {
+    content.style.display = "none";
+    icon.textContent = "+";
+  }
+}
 
 </body>
 </html>
