@@ -372,8 +372,7 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
     <a href="#nosotros">Nosotros</a>
     <a href="#productos">Productos</a>
     <a href="#ventajas">Ventajas</a>
-    <a href="#registro">Mi perfil</a><a href="#como-comprar">Cómo comprar</a><a href="#cotizador">Cotizador</a><a href="#testimonios">Testimonios</a><a href="#blog" style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text);text-decoration:none;">Blog</a>
-        <a href="#contacto">Contacto</a>
+    <a href="#registro">Mi perfil</a><a href="#como-comprar">Cómo comprar</a><a href="#cotizador">Cotizador</a><a href="#testimonios">Testimonios</a><a href="#contacto">Contacto</a>
   </div>
 </nav>
 <section class="hero" id="inicio">
@@ -512,6 +511,15 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
 
     </div>
   </div>
+
+    <!-- BOTÓN CAMIÓN COMPLETO -->
+    <div style="margin-top:3rem;text-align:center;padding:0 1rem;">
+      <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:1rem;">¿NECESITAS GRANDES VOLÚMENES?</div>
+      <button onclick="document.getElementById('modal-camion').style.display='flex'" style="display:inline-flex;align-items:center;gap:0.8rem;background:#0a0a0a;color:#fff;padding:1.1rem 2.5rem;font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;box-shadow:4px 4px 0 #e8903a;">
+        🚛 Consultar camión completo
+      </button>
+      <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:#888;margin-top:0.8rem;">~27 toneladas · Quebracho Blanco o Colorado · Precio preferencial</div>
+    </div>
 </section>
 <section id="cotizador" style="background:var(--bg2);padding:6rem 3rem;">
   <div class="container">
@@ -602,9 +610,9 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
               <svg style="width:20px;height:20px;flex-shrink:0;" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Confirmar por WhatsApp
             </button>
 
-            <a href="https://link.mercadopago.cl/pagolacarboneria" target="_blank" id="btn-mp" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;text-decoration:none;width:100%;">
+            <button onclick="abrirMercadoPago()" id="btn-mp" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;border:none;cursor:pointer;width:100%;">
               <svg style="height:18px;flex-shrink:0;" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 6l4 10 4-10h4v20h-4V16l-4 8-4-8v10H8V6h8z" fill="#fff"/><path d="M44 6h4l6 12 6-12h4v20h-4V14l-6 12-6-12v12h-4V6zm26 0h12c3.3 0 6 2.7 6 6s-2.7 6-6 6H74v8h-4V6zm4 8h8c1.1 0 2-.9 2-2s-.9-2-2-2h-8v4z" fill="#fff"/></svg> Pagar con Mercado Pago
-            </a>
+            </button>
             <div id="mp-loading" style="display:none;font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:0.5rem;text-align:center;">Generando link de pago...</div>
 
             <!-- Botón agregar al carrito -->
@@ -629,26 +637,6 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
     </div>
   </div>
 </section>
-    <!-- CALCULADORA DE AHORRO POR VOLUMEN -->
-    <div style="margin-top:3rem;background:#fff;padding:2rem;border-left:4px solid #e8903a;">
-      <div style="font-family:Barlow Condensed,sans-serif;font-size:1rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">COMPRA INTELIGENTE</div>
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;margin-bottom:0.3rem;">¿Cuánto ahorras comprando más?</h3>
-      <p style="font-family:Barlow,sans-serif;font-size:0.88rem;color:#666;margin-bottom:1.5rem;">Elige un producto y ve cuánto ahorras al subir de rango de compra.</p>
-
-      <div style="margin-bottom:1.5rem;">
-        <label style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:#888;display:block;margin-bottom:0.4rem;">Selecciona el producto</label>
-        <select id="calc-prod" onchange="calcularAhorroVolumen()" style="width:100%;max-width:360px;padding:0.8rem;border:2px solid #0a0a0a;font-family:Barlow,sans-serif;font-size:0.9rem;background:#fff;">
-          <option value="qb_blanco_25">Bolsa 2,5 kg Quebracho Blanco</option>
-          <option value="qb_colorado_25">Bolsa 2,5 kg Quebracho Colorado</option>
-          <option value="qb_colorado_2">Bolsa 2 kg Quebracho Colorado</option>
-          <option value="saco_15">Saco 15 kg Quebracho Blanco</option>
-          <option value="granel">Carbón Vegetal a Granel</option>
-        </select>
-      </div>
-
-      <div id="calc-vol-resultado"></div>
-    </div>
-
 <!-- CARRITO DE COMPRAS -->
 <section id="carrito" style="background:#f9f9f7;padding:3rem;display:none;">
   <div class="container">
@@ -1194,58 +1182,6 @@ function pagarCarritoMP(){
 }
 // ==================== FIN CARRITO ====================
 
-
-function calcularAhorroVolumen(){
-  var prodKey = document.getElementById("calc-prod").value;
-  var p = PRODUCTOS[prodKey];
-  if(!p){ return; }
-
-  var html = "";
-  var rangos = p.rangos;
-  var unidad = p.unidad;
-
-  // Compare each range against the first (most expensive) range
-  var precioBase = rangos[0].precio;
-  var cantBase = rangos[0].min;
-
-  for(var i = 0; i < rangos.length; i++){
-    var r = rangos[i];
-    var cant = r.min;
-    var precio = r.precio;
-    var totalBase = Math.round(cantBase * precioBase * 1.19);
-    var totalRango = Math.round(cant * precio * 1.19);
-    var ahorro = Math.round((precioBase - precio) * cant * 1.19);
-    var ahorroMes = ahorro;
-    var ahorroAno = ahorroMes * 12;
-    var destacado = i === rangos.length - 1;
-
-    html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:1rem 1.2rem;margin-bottom:0.5rem;background:' + (destacado ? "#0a0a0a" : "#f9f9f7") + ';border-left:3px solid ' + (destacado ? "#e8903a" : "#e0e0e0") + ';flex-wrap:wrap;gap:0.5rem;">';
-    html += '<div>';
-    html += '<div style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;color:' + (destacado ? "#fff" : "#0a0a0a") + ';">' + r.label + '</div>';
-    html += '<div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:' + (destacado ? "#aaa" : "#888") + ';">$' + precio.toLocaleString("es-CL") + ' + IVA / ' + unidad.replace("bolsas","bolsa").replace("kg","kg") + ' · Total: $' + totalRango.toLocaleString("es-CL") + '</div>';
-    html += '</div>';
-
-    if(i === 0){
-      html += '<div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:#888;">Precio base</div>';
-    } else {
-      html += '<div style="text-align:right;">';
-      html += '<div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:1px;color:#e8903a;">Ahorras $' + ahorroMes.toLocaleString("es-CL") + '</div>';
-      html += '<div style="font-family:Barlow Condensed,sans-serif;font-size:0.62rem;letter-spacing:1px;color:' + (destacado ? "#aaa" : "#888") + ';">$' + ahorroAno.toLocaleString("es-CL") + ' al año</div>';
-      html += '</div>';
-    }
-    html += '</div>';
-  }
-
-  // Best deal callout
-  var mejorRango = rangos[rangos.length-1];
-  var mejorAhorro = Math.round((precioBase - mejorRango.precio) * mejorRango.min * 1.19 * 12);
-  html += '<div style="margin-top:1rem;background:#e8903a;color:#fff;padding:0.8rem 1.2rem;font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;">🔥 Comprando ' + mejorRango.label + ' ahorras hasta $' + mejorAhorro.toLocaleString("es-CL") + ' al año</div>';
-
-  document.getElementById("calc-vol-resultado").innerHTML = html;
-}
-
-// Auto-calculate on load
-document.addEventListener("DOMContentLoaded", function(){ calcularAhorroVolumen(); });
 function cerrarModal(){
   document.getElementById("modal-pago").style.display = "none";
 }
@@ -1513,138 +1449,6 @@ function calcular(){
 </section>
 
 
-
-<!-- BLOG -->
-<section id="blog" style="background:var(--bg2);padding:6rem 3rem;">
-  <div class="container">
-    <div class="section-num anim-fade-in">10</div>
-    <p class="section-label anim-fade-up">Conocimiento y consejos</p>
-    <h2 class="section-title anim-fade-up d2">Blog</h2>
-    <p class="section-body anim-fade-up d3" style="margin-bottom:3rem;">Todo lo que necesitas saber sobre carbón vegetal, quebracho y parrillas profesionales.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
-
-      <article style="background:#fff;cursor:pointer;" onclick="toggleArticulo('art1')">
-        <div style="background:#0a0a0a;padding:1.5rem;position:relative;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">CARBÓN VEGETAL</div>
-          <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;line-height:1.1;padding-right:2rem;">¿Qué es el carbón quebracho y por qué es el mejor para parrillas?</h3>
-          <div id="art1-icon" style="position:absolute;bottom:1rem;right:1rem;font-size:1.4rem;color:#e8903a;font-weight:300;">+</div>
-        </div>
-        <div id="art1" style="display:none;padding:1.5rem;font-family:Barlow,sans-serif;font-size:0.88rem;line-height:1.8;color:#444;">
-          <p>El <strong>carbón quebracho</strong> proviene del árbol quebracho, nativo de Argentina y Paraguay, una de las maderas más duras del planeta. Su nombre viene del español "quebrar hacha".</p><br>
-          <p><strong>¿Por qué es superior?</strong></p>
-          <ul style="margin:0.8rem 0 0.8rem 1.5rem;">
-            <li><strong>Alta densidad:</strong> arde más tiempo que el carbón común.</li>
-            <li><strong>Mínima ceniza:</strong> hasta 3 veces menos que carbones inferiores.</li>
-            <li><strong>Sin humo excesivo:</strong> ideal para cocinas de restaurantes.</li>
-            <li><strong>Temperatura constante:</strong> fundamental para cortes de calidad.</li>
-            <li><strong>100% natural:</strong> sin acelerantes ni aditivos.</li>
-          </ul>
-          <a href="#cotizador" style="color:#e8903a;font-weight:600;font-family:Barlow Condensed,sans-serif;letter-spacing:1px;">Cotiza ahora →</a>
-        </div>
-      </article>
-
-      <article style="background:#fff;cursor:pointer;" onclick="toggleArticulo('art2')">
-        <div style="background:#0a0a0a;padding:1.5rem;position:relative;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">GUÍA DE COMPRA</div>
-          <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;line-height:1.1;padding-right:2rem;">Carbón vegetal vs carbón mineral: diferencias y usos</h3>
-          <div id="art2-icon" style="position:absolute;bottom:1rem;right:1rem;font-size:1.4rem;color:#e8903a;font-weight:300;">+</div>
-        </div>
-        <div id="art2" style="display:none;padding:1.5rem;font-family:Barlow,sans-serif;font-size:0.88rem;line-height:1.8;color:#444;">
-          <p><strong>Carbón vegetal (quebracho):</strong></p>
-          <ul style="margin:0.5rem 0 1rem 1.5rem;">
-            <li>Origen: madera carbonizada · Temperatura: hasta 900°C</li>
-            <li>Humo mínimo · Sin olores químicos · Renovable</li>
-            <li>Uso: parrillas, asadores, gastronomía</li>
-          </ul>
-          <p><strong>Carbón mineral:</strong></p>
-          <ul style="margin:0.5rem 0 1rem 1.5rem;">
-            <li>Origen: depósitos fósiles · Contaminantes con azufre</li>
-            <li>No renovable · Alta emisión de CO₂</li>
-            <li>Uso: industria pesada, generación eléctrica</li>
-          </ul>
-          <p>Para uso gastronómico, el carbón vegetal quebracho es siempre la mejor opción.</p><br>
-          <a href="#cotizador" style="color:#e8903a;font-weight:600;font-family:Barlow Condensed,sans-serif;letter-spacing:1px;">Ver precios →</a>
-        </div>
-      </article>
-
-      <article style="background:#fff;cursor:pointer;" onclick="toggleArticulo('art3')">
-        <div style="background:#0a0a0a;padding:1.5rem;position:relative;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">RESTAURANTES</div>
-          <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;line-height:1.1;padding-right:2rem;">Guía completa para elegir el carbón ideal para tu restaurante</h3>
-          <div id="art3-icon" style="position:absolute;bottom:1rem;right:1rem;font-size:1.4rem;color:#e8903a;font-weight:300;">+</div>
-        </div>
-        <div id="art3" style="display:none;padding:1.5rem;font-family:Barlow,sans-serif;font-size:0.88rem;line-height:1.8;color:#444;">
-          <p><strong>1. Define tu volumen:</strong> Restaurante pequeño = 50-80 kg/mes. Mediano = 150-300 kg/mes.</p><br>
-          <p><strong>2. Elige el formato:</strong></p>
-          <ul style="margin:0.5rem 0 1rem 1.5rem;">
-            <li><strong>Bolsas 2,5 kg:</strong> consumo moderado o variable.</li>
-            <li><strong>Sacos 15 kg:</strong> parrilla activa todos los días.</li>
-            <li><strong>Granel:</strong> grandes volúmenes, máximo ahorro.</li>
-          </ul>
-          <p><strong>3. Negocia por volumen:</strong> En La Carbonería a mayor volumen, menor precio por unidad.</p><br>
-          <a href="#cotizador" style="color:#e8903a;font-weight:600;font-family:Barlow Condensed,sans-serif;letter-spacing:1px;">Calcula tu precio →</a>
-        </div>
-      </article>
-
-      <article style="background:#fff;cursor:pointer;" onclick="toggleArticulo('art4')">
-        <div style="background:#0a0a0a;padding:1.5rem;position:relative;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">GESTIÓN</div>
-          <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;line-height:1.1;padding-right:2rem;">¿Cuánto carbón necesita un restaurante al mes?</h3>
-          <div id="art4-icon" style="position:absolute;bottom:1rem;right:1rem;font-size:1.4rem;color:#e8903a;font-weight:300;">+</div>
-        </div>
-        <div id="art4" style="display:none;padding:1.5rem;font-family:Barlow,sans-serif;font-size:0.88rem;line-height:1.8;color:#444;">
-          <p><strong>Estimación por tipo de restaurante:</strong></p>
-          <ul style="margin:0.5rem 0 1rem 1.5rem;">
-            <li><strong>Hasta 50 cubiertos:</strong> 50 – 80 kg/mes</li>
-            <li><strong>50-150 cubiertos:</strong> 100 – 200 kg/mes</li>
-            <li><strong>+150 cubiertos:</strong> 200 – 500 kg/mes</li>
-            <li><strong>Cadena o parrilla especializada:</strong> 500+ kg/mes</li>
-          </ul>
-          <p>Te recomendamos tener stock para 2 semanas. Despachamos en 48 horas en toda la RM.</p><br>
-          <a href="#cotizador" style="color:#e8903a;font-weight:600;font-family:Barlow Condensed,sans-serif;letter-spacing:1px;">Cotiza tu pedido mensual →</a>
-        </div>
-      </article>
-
-      <article style="background:#fff;cursor:pointer;" onclick="toggleArticulo('art5')">
-        <div style="background:#0a0a0a;padding:1.5rem;position:relative;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">PRODUCTOS</div>
-          <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;line-height:1.1;padding-right:2rem;">Quebracho blanco vs quebracho colorado: ¿cuál elegir?</h3>
-          <div id="art5-icon" style="position:absolute;bottom:1rem;right:1rem;font-size:1.4rem;color:#e8903a;font-weight:300;">+</div>
-        </div>
-        <div id="art5" style="display:none;padding:1.5rem;font-family:Barlow,sans-serif;font-size:0.88rem;line-height:1.8;color:#444;">
-          <p><strong>Quebracho Blanco:</strong></p>
-          <ul style="margin:0.5rem 0 1rem 1.5rem;">
-            <li>Mayor densidad · Más duración · Mínima ceniza</li>
-            <li>Ideal: parrillas premium, uso intensivo diario</li>
-          </ul>
-          <p><strong>Quebracho Colorado:</strong></p>
-          <ul style="margin:0.5rem 0 1rem 1.5rem;">
-            <li>Excelente relación precio-rendimiento</li>
-            <li>Ideal: restaurantes con presupuesto optimizado, asados frecuentes</li>
-          </ul>
-          <p>Si buscas máximo rendimiento elige el blanco. Para mejor precio-calidad, el colorado.</p><br>
-          <a href="#cotizador" style="color:#e8903a;font-weight:600;font-family:Barlow Condensed,sans-serif;letter-spacing:1px;">Ver precios →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<script>
-function toggleArticulo(id){
-  var content = document.getElementById(id);
-  var icon = document.getElementById(id + "-icon");
-  if(content.style.display === "none"){
-    content.style.display = "block";
-    icon.textContent = "−";
-  } else {
-    content.style.display = "none";
-    icon.textContent = "+";
-  }
-}
-</script>
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -1802,17 +1606,49 @@ document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
 </div>
 
 
-function toggleArticulo(id){
-  var content = document.getElementById(id);
-  var icon = document.getElementById(id + "-icon");
-  if(content.style.display === "none"){
-    content.style.display = "block";
-    icon.textContent = "−";
-  } else {
-    content.style.display = "none";
-    icon.textContent = "+";
-  }
-}
+<!-- MODAL CAMIÓN COMPLETO -->
+<div id="modal-camion" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:#0a0a0a;max-width:520px;width:100%;padding:2.5rem;position:relative;border-left:4px solid #e8903a;">
+    <button onclick="document.getElementById('modal-camion').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888;">✕</button>
+    
+    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">VOLUMEN ESPECIAL</div>
+    <h2 style="font-family:Bebas Neue,sans-serif;font-size:2.2rem;letter-spacing:3px;color:#fff;margin-bottom:0.3rem;">🚛 Camión Completo</h2>
+    <div style="width:40px;height:2px;background:#e8903a;margin-bottom:1.5rem;"></div>
+
+    <div style="font-family:Barlow,sans-serif;font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.5rem;">
+      Para clientes que necesitan grandes volúmenes, ofrecemos la opción de <strong style="color:#fff;">camión completo</strong> con precio preferencial exclusivo.
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
+      <div style="background:rgba(255,255,255,0.05);padding:1.2rem;border-left:2px solid #e8903a;">
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:0.4rem;">Quebracho Blanco</div>
+        <div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;">Saco 15 kg</div>
+        <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">~1.800 sacos · 27 ton</div>
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:1px;color:#e8903a;margin-top:0.5rem;font-weight:700;">PRECIO PREFERENCIAL</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);padding:1.2rem;border-left:2px solid #e8903a;">
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:0.4rem;">Quebracho Colorado</div>
+        <div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;">Saco 15 kg</div>
+        <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">~1.800 sacos · 27 ton</div>
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:1px;color:#e8903a;margin-top:0.5rem;font-weight:700;">PRECIO PREFERENCIAL</div>
+      </div>
+    </div>
+
+    <div style="background:rgba(232,144,58,0.1);border:1px solid rgba(232,144,58,0.3);padding:1rem;margin-bottom:1.5rem;font-family:Barlow,sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.7);">
+      💡 El precio se cotiza de forma personalizada según disponibilidad, destino y frecuencia de compra.
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:0.8rem;">
+      <a href="https://wa.me/56920571175?text=Hola%20La%20Carboner%C3%ADa%2C%20me%20interesa%20cotizar%20un%20cam%C3%B3n%20completo%20de%20carb%C3%B3n%20quebracho.%20%C2%BFPueden%20enviarme%20informaci%C3%B3n%20y%20precio%20preferencial%3F" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#25D366;color:#fff;padding:1rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">
+        <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+      <a href="mailto:comercial@we-trade.cl?subject=Consulta%20Camión%20Completo%20Carbón%20Quebracho&body=Hola%2C%20me%20interesa%20cotizar%20un%20camión%20completo%20de%20carbón%20quebracho." style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:transparent;color:#fff;padding:0.9rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.2);">
+        ✉️ Enviar correo
+      </a>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
