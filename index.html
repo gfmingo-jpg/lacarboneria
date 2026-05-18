@@ -515,9 +515,13 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
     <!-- BOTÓN CAMIÓN COMPLETO -->
     <div style="margin-top:3rem;text-align:center;padding:0 1rem;">
       <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:1rem;">¿NECESITAS GRANDES VOLÚMENES?</div>
-      <button onclick="document.getElementById('modal-camion').style.display='flex'" style="display:inline-flex;align-items:center;gap:0.8rem;background:#0a0a0a;color:#fff;padding:1.1rem 2.5rem;font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:3px;text-transform:uppercase;border:none;cursor:pointer;box-shadow:4px 4px 0 #e8903a;">
-        🚛 Consultar camión completo
+      <button onclick="document.getElementById('modal-camion').style.display='flex'" style="display:inline-flex;align-items:center;gap:1rem;background:#0a0a0a;color:#fff;padding:1.2rem 2.8rem;font-family:Bebas Neue,sans-serif;font-size:1.2rem;letter-spacing:4px;text-transform:uppercase;border:2px solid #e8903a;cursor:pointer;position:relative;overflow:hidden;transition:all 0.3s;box-shadow:0 0 0 0 rgba(232,144,58,0.4);animation:pulseBorder 2.5s infinite;">
+        <span style="font-size:1.5rem;">🚛</span>
+        <span style="position:relative;z-index:1;">Consultar camión completo</span>
       </button>
+      <style>
+        @keyframes pulseBorder{0%,100%{box-shadow:0 0 0 0 rgba(232,144,58,0.4),inset 0 0 0 0 rgba(232,144,58,0);}50%{box-shadow:0 0 0 8px rgba(232,144,58,0),inset 0 0 20px rgba(232,144,58,0.05);}}
+      </style>
       <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:#888;margin-top:0.8rem;">~27 toneladas · Quebracho Blanco o Colorado · Precio preferencial</div>
     </div>
 </section>
