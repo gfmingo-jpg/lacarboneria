@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18093804073"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-18093804073');
-</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Carbonería</title>
@@ -26,7 +18,6 @@ a{color:inherit;text-decoration:none;}
 @keyframes drawLine{from{width:0;}to{width:100%;}}
 @keyframes rotateSlowly{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
-@keyframes pulseOrange{0%,100%{box-shadow:0 4px 20px rgba(232,144,58,0.5),0 0 0 0 rgba(232,144,58,0.4);}50%{box-shadow:0 4px 28px rgba(232,144,58,0.7),0 0 0 10px rgba(232,144,58,0);}}
 .anim-fade-up{animation:fadeUp 0.7s cubic-bezier(.22,.68,0,1.2) both;}
 .anim-fade-in{animation:fadeIn 0.9s ease both;}
 .anim-slide-left{animation:slideLeft 0.7s cubic-bezier(.22,.68,0,1.2) both;}
@@ -161,210 +152,15 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
   section{padding:4rem 1.5rem;}
   .footer-top{flex-direction:column;}
 }
-
-@media(max-width:600px){
-  /* Hamburger */
-  #hamburger{display:flex !important;}
-  #nav-links-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(255,255,255,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:9998;}
-  #nav-links-menu.open{display:flex !important;}
-  #nav-links-menu a{font-size:1.2rem;letter-spacing:3px;}
-  .nav-logo{font-size:1.1rem;}
-  nav{padding:0.7rem 1rem;}
-
-  /* Hero compacto */
-  .hero-grid{padding:1.5rem 1rem 1rem !important;min-height:auto !important;}
-  .section-title,.hero-title{font-size:clamp(2rem,10vw,3.5rem) !important;line-height:0.9 !important;}
-  .hero-desc{font-size:0.88rem;margin-bottom:1.2rem !important;line-height:1.5;}
-  .hero-actions{flex-direction:column;gap:0.5rem;}
-  .hero-actions a,.hero-actions button{width:100%;text-align:center;justify-content:center;padding:0.7rem !important;font-size:0.75rem !important;}
-
-  /* Secciones padding reducido */
-  section{padding:1.8rem 1rem !important;}
-  .container{padding:0 0.8rem !important;}
-  h2.section-title{font-size:clamp(1.6rem,8vw,2.8rem) !important;}
-  .section-number{font-size:3.5rem !important;line-height:1;}
-  .section-label{font-size:0.6rem !important;margin-bottom:0.3rem !important;}
-
-  /* Stats 2x2 compacto */
-  .stats-grid{grid-template-columns:repeat(2,1fr) !important;gap:0.6rem !important;}
-  .stat-item{padding:0.8rem !important;}
-  .stat-number{font-size:1.8rem !important;}
-  .stat-label{font-size:0.65rem !important;}
-
-  /* Marquee */
-  .marquee-track{padding:0.5rem 0 !important;}
-
-  /* Productos 1 columna */
-  .products-grid{grid-template-columns:1fr !important;gap:0.8rem !important;}
-
-  /* Cotizador */
-  .cotizador-inner{grid-template-columns:1fr !important;gap:0.8rem !important;}
-  .cot-panel{padding:1rem !important;}
-  .cot-resultado{padding:1rem !important;}
-
-  /* Ventajas compactas - horizontal */
-  .ventajas-grid{grid-template-columns:1fr !important;gap:0 !important;}
-  .ventaja-item{padding:0.8rem 1rem !important;display:flex !important;align-items:center !important;gap:1rem !important;border-bottom:1px solid var(--border);}
-  .ventaja-number{font-size:1.3rem !important;min-width:35px !important;margin-bottom:0 !important;}
-  .ventaja-title{font-size:0.8rem !important;margin-bottom:0.1rem !important;}
-  .ventaja-desc{font-size:0.75rem !important;color:var(--muted);}
-
-  /* Testimonios compactos */
-  .testimonios-grid{grid-template-columns:1fr !important;gap:0.6rem !important;}
-  .testimonio-item{padding:1rem !important;}
-  .testimonio-text{font-size:0.82rem !important;line-height:1.5 !important;}
-
-  /* Cobertura */
-  .cobertura-grid{grid-template-columns:1fr !important;gap:1rem !important;}
-  iframe{height:200px !important;}
-
-  /* FAQ */
-  .faq-item{padding:0.8rem !important;}
-  .faq-question{font-size:0.8rem !important;}
-  .faq-answer{font-size:0.78rem !important;}
-
-  /* Contacto */
-  .contact-layout{grid-template-columns:1fr !important;}
-  .contact-form input,.contact-form textarea,.contact-form select{font-size:16px !important;padding:0.7rem !important;}
-
-  /* Footer */
-  .footer-top{flex-direction:column;gap:1.2rem;}
-  .footer-bottom{flex-direction:column;gap:0.4rem;text-align:center;}
-
-  /* Botones */
-  .btn{width:100%;text-align:center;justify-content:center;display:flex;padding:0.7rem 1rem !important;font-size:0.72rem !important;}
-
-  /* Modal */
-  #modal-pago > div{padding:1.2rem 1rem !important;margin:0.8rem;}
-
-  /* Ocultar elementos decorativos */
-  .custom-cursor,.cursor-ring{display:none !important;}
-
-  /* Ocultar secciones en móvil */
-  section#ventajas{display:none !important;}
-  section#testimonios{display:none !important;}
-  .hero-visual-full{display:none !important;}
-  .marquee-wrap{display:none !important;}
-}
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "LocalBusiness",
-      "@id": "https://lacarboneriacl.cl/#business",
-      "name": "La Carbonería",
-      "description": "Especialistas en carbón vegetal de alta calidad. Quebracho blanco y colorado para uso industrial, gastronómico y doméstico. Distribuidor en Chile con más de 14 años de experiencia.",
-      "url": "https://lacarboneriacl.cl",
-      "telephone": "+56962438241",
-      "email": "comercial@we-trade.cl",
-      "priceRange": "$$",
-      "currenciesAccepted": "CLP",
-      "paymentAccepted": "Mercado Pago, Transferencia bancaria",
-      "areaServed": ["Región Metropolitana", "Chile"],
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "El Olivar 2572",
-        "addressLocality": "La Pintana",
-        "addressRegion": "Región Metropolitana",
-        "postalCode": "8840055",
-        "addressCountry": "CL"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -33.614480673324934,
-        "longitude": -70.63878072409437
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-        "opens": "08:30",
-        "closes": "17:30"
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Carbón Quebracho Blanco bolsa 2.5 kg",
-      "description": "Carbón vegetal de quebracho blanco argentino de alta densidad. Mínima ceniza y máximo rendimiento calorífico. Ideal para restaurantes e industrias.",
-      "brand": {"@type": "Brand", "name": "La Carbonería"},
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "CLP",
-        "price": "1710",
-        "availability": "https://schema.org/InStock",
-        "seller": {"@type": "Organization", "name": "La Carbonería"}
-      }
-    },
-    {
-      "@type": "Product",
-      "name": "Carbón Quebracho Colorado bolsa 2.5 kg",
-      "description": "Carbón vegetal de quebracho colorado argentino. Alta densidad calorífica para uso gastronómico e industrial.",
-      "brand": {"@type": "Brand", "name": "La Carbonería"},
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "CLP",
-        "price": "1625",
-        "availability": "https://schema.org/InStock",
-        "seller": {"@type": "Organization", "name": "La Carbonería"}
-      }
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "¿Dónde comprar carbón vegetal en Santiago?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "La Carbonería es el principal distribuidor de carbón vegetal quebracho en Santiago. Estamos en El Olivar 2572, La Pintana, y despachamos a toda la Región Metropolitana con flete incluido."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Qué es el carbón quebracho blanco?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "El carbón quebracho blanco es un carbón vegetal de origen argentino, reconocido por su alta densidad, mínima ceniza y máximo rendimiento calorífico. Es el preferido por restaurantes y parrillas profesionales en Chile."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Hacen despacho de carbón a domicilio en Santiago?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, La Carbonería realiza despachos en toda la Región Metropolitana en 48 horas con flete incluido en el precio."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Cuál es el precio del carbón quebracho en Chile?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "En La Carbonería el carbón quebracho blanco parte desde $1.710 + IVA por bolsa de 2,5 kg con despacho incluido. Ofrecemos precios por volumen para compras mayores a 50 unidades."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "¿Venden carbón para restaurantes en Chile?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Sí, somos proveedores especializados para restaurantes, hoteles e industrias. Contamos con carbón quebracho blanco y colorado en bolsas de 2 y 2,5 kg y sacos de 15 kg con precios mayoristas."
-          }
-        }
-      ]
-    }
-  ]
-}
-</script>
 </head>
 <body>
 <div class="custom-cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
-<div class="wa-float" style="position:fixed;right:16px;bottom:24px;z-index:9999;">
-  <a href="https://wa.me/56962438241" target="_blank" style="display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:10px 16px;border-radius:50px;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:1px;text-decoration:none;box-shadow:0 4px 12px rgba(37,211,102,0.4);">
-    <svg style="width:20px;height:20px;flex-shrink:0;" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+56 9 6243 8241
-  </a>
+<div class="wa-float">
+  <a href="https://wa.me/56920571175" target="_blank" class="wa-btn"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+569 2057 1175</a>
+  <a href="https://wa.me/56995790362" target="_blank" class="wa-btn"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+569 9579 0362</a>
+  <a href="https://wa.me/56997586538" target="_blank" class="wa-btn"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+569 9758 6538</a>
 </div>
 <nav>
   <div class="nav-logo anim-fade-in">La Carbonería</div>
@@ -384,9 +180,7 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
       <p class="hero-sub anim-fade-up d3">Especialistas en carbón vegetal de alta calidad. Quebracho blanco y colorado para uso industrial, gastronómico y doméstico.</p>
       <div class="btn-row anim-fade-up d4">
         <a href="#productos" class="btn">Ver catálogo</a>
-        <a href="#cotizador" class="btn btn-cotizador" style="background:linear-gradient(135deg,#e8903a,#d4520a);color:#fff;border:none;box-shadow:0 4px 20px rgba(232,144,58,0.5);position:relative;overflow:hidden;animation:pulseOrange 2s infinite;font-size:1.1rem;letter-spacing:3px;padding:1rem 2rem;">
-  <span style="position:relative;z-index:1;">🔥 Cotizador en línea</span>
-</a>
+        <a href="#contacto" class="btn btn-ghost">Cotizar ahora</a>
       </div>
     </div>
     <div class="hero-visual">
@@ -511,271 +305,7 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
 
     </div>
   </div>
-
-    <!-- BOTÓN CAMIÓN COMPLETO -->
-    <div style="margin-top:3rem;text-align:center;padding:0 1rem;">
-      <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:1rem;">¿NECESITAS GRANDES VOLÚMENES?</div>
-      <button onclick="document.getElementById('modal-camion').style.display='flex'" style="display:inline-flex;align-items:center;gap:1rem;background:#0a0a0a;color:#fff;padding:1.2rem 2.8rem;font-family:Bebas Neue,sans-serif;font-size:1.2rem;letter-spacing:4px;text-transform:uppercase;border:2px solid #e8903a;cursor:pointer;position:relative;overflow:hidden;transition:all 0.3s;box-shadow:0 0 0 0 rgba(232,144,58,0.4);animation:pulseBorder 2.5s infinite;">
-        <span style="font-size:1.5rem;">🚛</span>
-        <span style="position:relative;z-index:1;">Consultar camión completo</span>
-      </button>
-      <style>
-        @keyframes pulseBorder{0%,100%{box-shadow:0 0 0 0 rgba(232,144,58,0.4),inset 0 0 0 0 rgba(232,144,58,0);}50%{box-shadow:0 0 0 8px rgba(232,144,58,0),inset 0 0 20px rgba(232,144,58,0.05);}}
-      </style>
-      <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:#888;margin-top:0.8rem;">~27 toneladas · Quebracho Blanco o Colorado · Precio preferencial</div>
-    </div>
 </section>
-<section id="cotizador" style="background:var(--bg2);padding:6rem 3rem;">
-  <div class="container">
-    <div class="section-num anim-fade-in">07</div>
-    <p class="section-label anim-fade-up">Precios con despacho incluido</p>
-    <h2 class="section-title anim-fade-up d2">Cotizador en línea</h2>
-    <p class="section-body anim-fade-up d3" style="margin-bottom:2.5rem;">Selecciona el producto y la cantidad — calcula tu precio final con IVA y despacho incluido al instante.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bg3);border:2px solid var(--bg3);" class="anim-scale d2">
-
-      <!-- LEFT: Configurador -->
-      <div style="background:#fff;padding:2.5rem;">
-
-        <!-- Modo: despacho o retiro -->
-        <div class="form-group">
-          <label class="form-label">Modalidad</label>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:2px solid var(--bg3);margin-bottom:0.5rem;">
-            <button onclick="setModo('despacho')" id="btn-despacho" style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:0.8rem;border:none;cursor:pointer;background:var(--bg3);color:#fff;transition:all 0.2s;">🚚 Despacho a domicilio</button>
-            <button onclick="setModo('retiro')" id="btn-retiro" style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:0.8rem;border:none;cursor:pointer;background:#fff;color:var(--muted);transition:all 0.2s;">🏭 Retiro en bodega</button>
-          </div>
-          <p id="retiro-direccion" style="display:none;font-family:Barlow Condensed,sans-serif;font-size:0.68rem;letter-spacing:1.5px;color:var(--muted);font-weight:600;margin-top:0.4rem;">📍 El Olivar 2572, La Pintana · Lun–Vie 8:30–17:30</p>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Producto</label>
-          <select class="form-select" id="cot-producto" onchange="calcular()">
-            <option value="">Selecciona un producto</option>
-            <option value="qb_blanco_25">Bolsa 2,5 kg Quebracho Blanco</option>
-            <option value="qb_colorado_25">Bolsa 2,5 kg Quebracho Colorado</option>
-            <option value="qb_colorado_2">Bolsa 2 kg Quebracho Colorado</option>
-            <option value="saco_15">Saco 15 kg Quebracho Blanco</option>
-            <option value="granel">Carbón Vegetal Premium a Granel</option>
-          </select>
-        </div>
-
-        <div class="form-group" id="cot-cantidad-wrap" style="display:none;">
-          <label class="form-label" id="cot-cantidad-label">Cantidad</label>
-          <input type="number" class="form-input" id="cot-cantidad" min="1" placeholder="Ingresa la cantidad" oninput="calcular()">
-          <p style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1.5px;color:var(--muted);margin-top:0.4rem;font-weight:600;" id="cot-hint"></p>
-        </div>
-
-        <!-- Rangos de precio -->
-        <div id="cot-rangos" style="display:none;margin-top:1.5rem;">
-          <p class="form-label" style="margin-bottom:1rem;">Rangos de precio (+ IVA · despacho incluido)</p>
-          <div style="display:grid;gap:1px;background:var(--border);border:1px solid var(--border);" id="cot-rangos-grid"></div>
-        </div>
-      </div>
-
-      <!-- RIGHT: Resultado -->
-      <div style="background:var(--bg3);padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;">
-        <div id="cot-resultado-vacio" style="text-align:center;color:rgba(255,255,255,0.25);padding:3rem 0;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:4rem;letter-spacing:3px;line-height:1;">Cotiza</div>
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;margin-top:0.5rem;">Selecciona producto y cantidad</div>
-        </div>
-
-        <div id="cot-resultado" style="display:none;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Producto</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1.6rem;letter-spacing:2px;color:#fff;margin-bottom:2rem;line-height:1;" id="res-producto"></div>
-
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Cantidad</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1.4rem;letter-spacing:2px;color:#fff;margin-bottom:2rem;" id="res-cantidad"></div>
-
-          <div style="height:1px;background:rgba(255,255,255,0.1);margin-bottom:2rem;"></div>
-
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Precio unitario (+ IVA)</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:1.5rem;" id="res-unitario"></div>
-
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Subtotal neto</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:1.5rem;" id="res-neto"></div>
-
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">IVA (19%)</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:2rem;" id="res-iva"></div>
-
-          <div style="height:1px;background:rgba(255,255,255,0.15);margin-bottom:1.5rem;"></div>
-
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.4rem;">Total con IVA · Despacho incluido</div>
-          <div style="font-family:Bebas Neue,sans-serif;font-size:3rem;letter-spacing:3px;color:#fff;line-height:1;" id="res-total"></div>
-
-          <div id="res-rango-badge" style="margin-top:1rem;display:inline-block;font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:0.35rem 0.8rem;font-weight:700;"></div>
-
-          <div style="height:1px;background:rgba(255,255,255,0.1);margin:1.5rem 0;"></div>
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;">Tus datos para confirmar</div>
-          <input type="text" id="cot-nombre" placeholder="Tu nombre" oninput="actualizarWA()" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.7rem 0.9rem;color:#fff;font-family:Barlow,sans-serif;font-size:0.85rem;margin-bottom:0.6rem;outline:none;">
-          <input type="email" id="cot-email" placeholder="Tu correo electrónico" oninput="actualizarWA()" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.7rem 0.9rem;color:#fff;font-family:Barlow,sans-serif;font-size:0.85rem;margin-bottom:0.6rem;outline:none;">
-          <input type="tel" id="cot-telefono" placeholder="Tu teléfono (opcional)" oninput="actualizarWA()" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.7rem 0.9rem;color:#fff;font-family:Barlow,sans-serif;font-size:0.85rem;margin-bottom:1.5rem;outline:none;">
-          <div style="margin-top:0.5rem;display:flex;flex-direction:column;gap:0.6rem;">
-            <button onclick="confirmarWADirecto()" style="display:flex;align-items:center;justify-content:center;gap:0.7rem;background:#25D366;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;border:none;cursor:pointer;width:100%;margin-bottom:0.6rem;">
-              <svg style="width:20px;height:20px;flex-shrink:0;" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Confirmar por WhatsApp
-            </button>
-
-            <button onclick="abrirMercadoPago()" id="btn-mp" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;border:none;cursor:pointer;width:100%;">
-              <svg style="height:18px;flex-shrink:0;" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 6l4 10 4-10h4v20h-4V16l-4 8-4-8v10H8V6h8z" fill="#fff"/><path d="M44 6h4l6 12 6-12h4v20h-4V14l-6 12-6-12v12h-4V6zm26 0h12c3.3 0 6 2.7 6 6s-2.7 6-6 6H74v8h-4V6zm4 8h8c1.1 0 2-.9 2-2s-.9-2-2-2h-8v4z" fill="#fff"/></svg> Pagar con Mercado Pago
-            </button>
-            <div id="mp-loading" style="display:none;font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:0.5rem;text-align:center;">Generando link de pago...</div>
-
-            <!-- Botón agregar al carrito -->
-            <button onclick="agregarAlCarrito()" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:transparent;color:#fff;padding:0.7rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.3);cursor:pointer;width:100%;margin-top:0.4rem;transition:all 0.2s;">
-              🛒 Agregar al carrito
-            </button>
-          </div>
-        </div>
-
-        <!-- Panel volumen especial >1000 -->
-        <div id="cot-grande" style="display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem 1rem;height:100%;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:3.5rem;letter-spacing:3px;color:#fff;line-height:1;margin-bottom:0.5rem;">+1.000</div>
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2rem;">Volumen especial · Atención personalizada</div>
-          <div style="height:1px;background:rgba(255,255,255,0.1);width:100%;margin-bottom:2rem;"></div>
-          <p style="font-family:Barlow,sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.7);font-weight:300;line-height:1.8;margin-bottom:2rem;">Para pedidos de gran volumen te ofrecemos <strong style="color:#fff;font-weight:600;">condiciones especiales y precio negociado</strong>. Uno de nuestros ejecutivos te contactará de inmediato.</p>
-          <a id="cot-grande-wa" href="#" target="_blank" style="display:flex;align-items:center;gap:0.7rem;background:#25D366;color:#fff;padding:1rem 1.8rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);text-decoration:none;transition:transform 0.2s;">
-            <span style="font-size:1.2rem;">💬</span> Solicitar atención personalizada
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-<!-- CARRITO DE COMPRAS -->
-<section id="carrito" style="background:#f9f9f7;padding:3rem;display:none;">
-  <div class="container">
-    <p style="color:var(--muted);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;margin-bottom:0.5rem;">RESUMEN DE PEDIDO</p>
-    <h2 style="font-family:Bebas Neue,sans-serif;font-size:clamp(2rem,5vw,3.5rem);letter-spacing:3px;margin-bottom:2rem;">Tu carrito</h2>
-    <div id="carrito-items" style="margin-bottom:2rem;"></div>
-    <div style="border-top:2px solid var(--bg3);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-      <div>
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:0.3rem;">TOTAL CON IVA</div>
-        <div id="carrito-total" style="font-family:Bebas Neue,sans-serif;font-size:2.5rem;letter-spacing:2px;">$0</div>
-      </div>
-      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-        <button onclick="vaciarCarrito()" style="background:transparent;border:1px solid #ccc;color:var(--muted);padding:0.7rem 1.2rem;font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">Vaciar carrito</button>
-        <button onclick="pedirCarritoPorWA()" style="display:flex;align-items:center;gap:0.5rem;background:#25D366;color:#fff;border:none;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;"><svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Confirmar por WhatsApp</button>
-        <button onclick="pagarCarritoMP()" style="display:flex;align-items:center;gap:0.5rem;background:#009EE3;color:#fff;border:none;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;"><svg style="height:18px;flex-shrink:0;" viewBox="0 0 180 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0C7.163 0 0 7.163 0 16s7.163 16 16 16 16-7.163 16-16S24.837 0 16 0zm0 6l4 10 4-10h4v20h-4V16l-4 8-4-8v10H8V6h8z" fill="#fff"/><path d="M44 6h4l6 12 6-12h4v20h-4V14l-6 12-6-12v12h-4V6zm26 0h12c3.3 0 6 2.7 6 6s-2.7 6-6 6H74v8h-4V6zm4 8h8c1.1 0 2-.9 2-2s-.9-2-2-2h-8v4z" fill="#fff"/></svg> Pagar con Mercado Pago</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="pago" style="background:var(--bg3);padding:6rem 3rem;">
-  <div class="container">
-    <p class="section-label anim-fade-up" style="color:rgba(255,255,255,0.4);">Opciones de pago</p>
-    <h2 class="section-title anim-fade-up d2" style="color:#fff;">Paga de forma segura</h2>
-    <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);max-width:480px;font-weight:300;line-height:1.9;margin-bottom:3rem;">Ofrecemos dos formas de pago simples y seguras. Una vez confirmada tu cotización, elige la que más te acomode.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.1);">
-
-      <!-- Mercado Pago -->
-      <div style="background:#1a1a1a;padding:2.5rem;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">💳</div>
-        <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:0.5rem;">Pago Online</div>
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;font-weight:700;">Mercado Pago · Activo</div>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:2rem;">Paga con tarjeta de débito, crédito o desde tu cuenta Mercado Pago. Seguro, rápido y con confirmación inmediata.</p>
-        <a href="https://link.mercadopago.cl/pagolacarboneria" target="_blank" style="display:inline-flex;align-items:center;gap:0.7rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);text-decoration:none;transition:transform 0.2s;">
-          <span style="font-size:1.1rem;">💳</span> Pagar con Mercado Pago
-        </a>
-        <p style="margin-top:0.8rem;font-family:Barlow,sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300;">Tarjeta débito, crédito o cuenta Mercado Pago · Pago seguro</p>
-      </div>
-
-      <!-- Transferencia -->
-      <div style="background:#1a1a1a;padding:2.5rem;">
-        <div style="font-size:2.5rem;margin-bottom:1rem;">🏦</div>
-        <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:0.5rem;">Transferencia Bancaria</div>
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;font-weight:700;">Confirmación en minutos</div>
-        <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:1.5rem;">Realiza tu transferencia y envía el comprobante por WhatsApp. Confirmamos tu pedido al instante.</p>
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1.2rem;margin-bottom:1.5rem;">
-          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.8rem;font-weight:700;">Datos bancarios</div>
-          <div style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:2;font-weight:300;">
-            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;">Banco</span><br>
-            <span style="color:#fff;font-weight:500;">Banco Santander</span><br>
-            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Tipo de cuenta</span><br>
-            <span style="color:#fff;font-weight:500;">Cuenta Corriente</span><br>
-            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Número de cuenta</span><br>
-            <span style="color:#fff;font-weight:500;">7237951-9</span><br>
-            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">RUT</span><br>
-            <span style="color:#fff;font-weight:500;">76.796.173-1</span><br>
-            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Titular</span><br>
-            <span style="color:#fff;font-weight:500;">La Carbonería · We Trade</span><br>
-            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Correo transferencia</span><br>
-            <span style="color:#fff;font-weight:500;">contabyadm@we-trade.cl</span>
-          </div>
-        </div>
-        <a href="https://wa.me/56962438241" target="_blank" style="display:flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.75rem 1.2rem;font-family:Barlow Condensed,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);text-decoration:none;width:fit-content;">
-          <span>💬</span> Enviar comprobante
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-<section id="cobertura" style="background:var(--bg);padding:6rem 3rem;">
-  <div class="container">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
-
-      <div>
-        <div class="section-num anim-fade-in">09</div>
-        <p class="section-label anim-fade-up">Despacho y cobertura</p>
-        <h2 class="section-title anim-fade-up d2">¿Dónde despachamos?</h2>
-        <p class="section-body anim-fade-up d3">Operamos desde La Pintana. Despachamos a toda la Región Metropolitana con el valor del flete incluido en el precio. Para regiones, coordinamos contacto previo y cotización de flete según destino y volumen.</p>
-
-        <div style="margin-top:2rem;display:grid;gap:1px;background:var(--border);border:2px solid var(--bg3);" class="anim-fade-up d3">
-          <div style="background:#fff;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;">Región Metropolitana</div>
-              <div style="font-size:0.75rem;color:var(--muted);font-weight:300;">Todas las comunas · Valor de producto con flete incluido</div>
-            </div>
-            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;font-weight:700;background:#0a0a0a;color:#fff;padding:0.3rem 0.8rem;">48H</div>
-          </div>
-          <div style="background:#fff;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;">Regiones</div>
-              <div style="font-size:0.75rem;color:var(--muted);font-weight:300;">Requiere contacto previo · Flete cotizado a parte</div>
-            </div>
-            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;font-weight:700;background:var(--bg2);color:var(--text);padding:0.3rem 0.8rem;border:1px solid var(--border);">Consultar</div>
-          </div>
-          <div style="background:#fff;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
-            <div>
-              <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;">Retiro en bodega</div>
-              <div style="font-size:0.75rem;color:var(--muted);font-weight:300;">El Olivar 2572, La Pintana · Sin mínimo</div>
-            </div>
-            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;font-weight:700;background:#0a0a0a;color:#fff;padding:0.3rem 0.8rem;">Inmediato</div>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <p class="section-label" style="margin-bottom:1rem;">Síguenos en Instagram</p>
-          <a href="https://instagram.com/lacarboneriachile" target="_blank" style="display:inline-flex;align-items:center;gap:0.8rem;background:var(--bg3);color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.15);text-decoration:none;">
-            <span style="font-size:1.1rem;">📸</span> @lacarboneriachile
-          </a>
-        </div>
-      </div>
-
-      <div class="anim-slide-left d3">
-        <p class="section-label" style="margin-bottom:1rem;">Nuestra bodega</p>
-        <div style="border:2px solid var(--bg3);overflow:hidden;">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3322.646296886461!2d-70.63878072409437!3d-33.614480673324934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d9cd1f28ea61%3A0x7d13c9ae961ed513!2sEl%20Olivar%202572%2C%208840055%20La%20Pintana%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses-419!2scl!4v1776287597075!5m2!1ses-419!2scl"
-            width="100%" height="350" style="border:0;display:block;" allowfullscreen="" loading="lazy">
-          </iframe>
-        </div>
-        <div style="background:var(--bg3);padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;">
-          <span style="font-size:1rem;">📍</span>
-          <div>
-            <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;color:#fff;">El Olivar 2572, La Pintana</div>
-            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Lun – Vie · 8:30 – 17:30 hrs</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <section class="features" id="ventajas">
   <div class="container">
     <div class="section-num anim-fade-in">03</div>
@@ -799,10 +329,10 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
         <p class="section-body anim-fade-up d3">Solicita una cotización, consulta disponibilidad o coordina un despacho. Respondemos a la brevedad.</p>
         <div class="contact-info-list anim-fade-up d4">
           <div class="ci-item"><div class="ci-icon">📍</div><div><div class="ci-label">Domicilio</div><div class="ci-val">El Olivar 2572<br>La Pintana, Región Metropolitana<br>Santiago, Chile</div></div></div>
-          <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-label">Teléfonos</div><div class="ci-val"><a href="tel:+56962438241">+56 9 6243 8241</a><br><a href="tel:+56995790362">+56 9 9579 0362</a><br><a href="tel:+56997586538">+56 9 9758 6538</a></div></div></div>
+          <div class="ci-item"><div class="ci-icon">📞</div><div><div class="ci-label">Teléfonos</div><div class="ci-val"><a href="tel:+56920571175">+56 9 2057 1175</a><br><a href="tel:+56995790362">+56 9 9579 0362</a><br><a href="tel:+56997586538">+56 9 9758 6538</a></div></div></div>
           <div class="ci-item"><div class="ci-icon">✉️</div><div><div class="ci-label">Correo</div><div class="ci-val"><a href="mailto:comercial@we-trade.cl">comercial@we-trade.cl</a></div></div></div>
           <div class="ci-item"><div class="ci-icon">💬</div><div><div class="ci-label">WhatsApp</div><div class="ci-val">
-            <a href="https://wa.me/56962438241" target="_blank" style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+56 9 6243 8241</a>
+            <a href="https://wa.me/56920571175" target="_blank" style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+56 9 2057 1175</a>
             <a href="https://wa.me/56995790362" target="_blank" style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+56 9 9579 0362</a>
             <a href="https://wa.me/56997586538" target="_blank" style="display:flex;align-items:center;gap:4px;"><svg style="width:16px;height:16px;vertical-align:middle;margin-right:4px;" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>+56 9 9758 6538</a>
           </div></div></div>
@@ -901,7 +431,57 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
   </div>
 </section>
 
+<section id="pago" style="background:var(--bg3);padding:6rem 3rem;">
+  <div class="container">
+    <p class="section-label anim-fade-up" style="color:rgba(255,255,255,0.4);">Opciones de pago</p>
+    <h2 class="section-title anim-fade-up d2" style="color:#fff;">Paga de forma segura</h2>
+    <p style="font-size:0.9rem;color:rgba(255,255,255,0.5);max-width:480px;font-weight:300;line-height:1.9;margin-bottom:3rem;">Ofrecemos dos formas de pago simples y seguras. Una vez confirmada tu cotización, elige la que más te acomode.</p>
 
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.1);">
+
+      <!-- Mercado Pago -->
+      <div style="background:#1a1a1a;padding:2.5rem;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">💳</div>
+        <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:0.5rem;">Pago Online</div>
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;font-weight:700;">Mercado Pago · Activo</div>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:2rem;">Paga con tarjeta de débito, crédito o desde tu cuenta Mercado Pago. Seguro, rápido y con confirmación inmediata.</p>
+        <a href="https://link.mercadopago.cl/pagolacarboneria" target="_blank" style="display:inline-flex;align-items:center;gap:0.7rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);text-decoration:none;transition:transform 0.2s;">
+          <span style="font-size:1.1rem;">💳</span> Pagar con Mercado Pago
+        </a>
+        <p style="margin-top:0.8rem;font-family:Barlow,sans-serif;font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300;">Tarjeta débito, crédito o cuenta Mercado Pago · Pago seguro</p>
+      </div>
+
+      <!-- Transferencia -->
+      <div style="background:#1a1a1a;padding:2.5rem;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🏦</div>
+        <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:0.5rem;">Transferencia Bancaria</div>
+        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:1.5rem;font-weight:700;">Confirmación en minutos</div>
+        <p style="font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.8;margin-bottom:1.5rem;">Realiza tu transferencia y envía el comprobante por WhatsApp. Confirmamos tu pedido al instante.</p>
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:1.2rem;margin-bottom:1.5rem;">
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:0.8rem;font-weight:700;">Datos bancarios</div>
+          <div style="font-size:0.82rem;color:rgba(255,255,255,0.6);line-height:2;font-weight:300;">
+            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;">Banco</span><br>
+            <span style="color:#fff;font-weight:500;">Banco Santander</span><br>
+            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Tipo de cuenta</span><br>
+            <span style="color:#fff;font-weight:500;">Cuenta Corriente</span><br>
+            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Número de cuenta</span><br>
+            <span style="color:#fff;font-weight:500;">7237951-9</span><br>
+            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">RUT</span><br>
+            <span style="color:#fff;font-weight:500;">76.796.173-1</span><br>
+            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Titular</span><br>
+            <span style="color:#fff;font-weight:500;">La Carbonería · We Trade</span><br>
+            <span style="color:rgba(255,255,255,0.35);font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1px;text-transform:uppercase;margin-top:0.5rem;display:block;">Correo transferencia</span><br>
+            <span style="color:#fff;font-weight:500;">contabyadm@we-trade.cl</span>
+          </div>
+        </div>
+        <a href="https://wa.me/56920571175" target="_blank" style="display:flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.75rem 1.2rem;font-family:Barlow Condensed,sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);text-decoration:none;width:fit-content;">
+          <span>💬</span> Enviar comprobante
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <section id="registro" style="background:var(--bg);padding:6rem 3rem;">
   <div class="container">
@@ -955,10 +535,118 @@ footer{background:var(--bg3);color:#fff;padding:4rem 3rem 2.5rem;}
     </div>
   </div>
 </section>
+<section id="cotizador" style="background:var(--bg2);padding:6rem 3rem;">
+  <div class="container">
+    <div class="section-num anim-fade-in">07</div>
+    <p class="section-label anim-fade-up">Precios con despacho incluido</p>
+    <h2 class="section-title anim-fade-up d2">Cotizador en línea</h2>
+    <p class="section-body anim-fade-up d3" style="margin-bottom:2.5rem;">Selecciona el producto y la cantidad — calcula tu precio final con IVA y despacho incluido al instante.</p>
 
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bg3);border:2px solid var(--bg3);" class="anim-scale d2">
+
+      <!-- LEFT: Configurador -->
+      <div style="background:#fff;padding:2.5rem;">
+
+        <!-- Modo: despacho o retiro -->
+        <div class="form-group">
+          <label class="form-label">Modalidad</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:2px solid var(--bg3);margin-bottom:0.5rem;">
+            <button onclick="setModo('despacho')" id="btn-despacho" style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:0.8rem;border:none;cursor:pointer;background:var(--bg3);color:#fff;transition:all 0.2s;">🚚 Despacho a domicilio</button>
+            <button onclick="setModo('retiro')" id="btn-retiro" style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:0.8rem;border:none;cursor:pointer;background:#fff;color:var(--muted);transition:all 0.2s;">🏭 Retiro en bodega</button>
+          </div>
+          <p id="retiro-direccion" style="display:none;font-family:Barlow Condensed,sans-serif;font-size:0.68rem;letter-spacing:1.5px;color:var(--muted);font-weight:600;margin-top:0.4rem;">📍 El Olivar 2572, La Pintana · Lun–Vie 8:30–17:30</p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Producto</label>
+          <select class="form-select" id="cot-producto" onchange="calcular()">
+            <option value="">Selecciona un producto</option>
+            <option value="qb_blanco_25">Bolsa 2,5 kg Quebracho Blanco</option>
+            <option value="qb_colorado_25">Bolsa 2,5 kg Quebracho Colorado</option>
+            <option value="qb_colorado_2">Bolsa 2 kg Quebracho Colorado</option>
+            <option value="saco_15">Saco 15 kg Quebracho Blanco</option>
+            <option value="granel">Carbón Vegetal Premium a Granel</option>
+          </select>
+        </div>
+
+        <div class="form-group" id="cot-cantidad-wrap" style="display:none;">
+          <label class="form-label" id="cot-cantidad-label">Cantidad</label>
+          <input type="number" class="form-input" id="cot-cantidad" min="1" placeholder="Ingresa la cantidad" oninput="calcular()">
+          <p style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:1.5px;color:var(--muted);margin-top:0.4rem;font-weight:600;" id="cot-hint"></p>
+        </div>
+
+        <!-- Rangos de precio -->
+        <div id="cot-rangos" style="display:none;margin-top:1.5rem;">
+          <p class="form-label" style="margin-bottom:1rem;">Rangos de precio (+ IVA · despacho incluido)</p>
+          <div style="display:grid;gap:1px;background:var(--border);border:1px solid var(--border);" id="cot-rangos-grid"></div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Resultado -->
+      <div style="background:var(--bg3);padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;">
+        <div id="cot-resultado-vacio" style="text-align:center;color:rgba(255,255,255,0.25);padding:3rem 0;">
+          <div style="font-family:Bebas Neue,sans-serif;font-size:4rem;letter-spacing:3px;line-height:1;">Cotiza</div>
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;margin-top:0.5rem;">Selecciona producto y cantidad</div>
+        </div>
+
+        <div id="cot-resultado" style="display:none;">
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Producto</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:1.6rem;letter-spacing:2px;color:#fff;margin-bottom:2rem;line-height:1;" id="res-producto"></div>
+
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.5rem;">Cantidad</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:1.4rem;letter-spacing:2px;color:#fff;margin-bottom:2rem;" id="res-cantidad"></div>
+
+          <div style="height:1px;background:rgba(255,255,255,0.1);margin-bottom:2rem;"></div>
+
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Precio unitario (+ IVA)</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:1.5rem;" id="res-unitario"></div>
+
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">Subtotal neto</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:1.5rem;" id="res-neto"></div>
+
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;">IVA (19%)</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:1.8rem;letter-spacing:2px;color:#fff;margin-bottom:2rem;" id="res-iva"></div>
+
+          <div style="height:1px;background:rgba(255,255,255,0.15);margin-bottom:1.5rem;"></div>
+
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:0.4rem;">Total con IVA · Despacho incluido</div>
+          <div style="font-family:Bebas Neue,sans-serif;font-size:3rem;letter-spacing:3px;color:#fff;line-height:1;" id="res-total"></div>
+
+          <div id="res-rango-badge" style="margin-top:1rem;display:inline-block;font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6);padding:0.35rem 0.8rem;font-weight:700;"></div>
+
+          <div style="height:1px;background:rgba(255,255,255,0.1);margin:1.5rem 0;"></div>
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.8rem;">Tus datos para confirmar</div>
+          <input type="text" id="cot-nombre" placeholder="Tu nombre" oninput="actualizarWA()" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.7rem 0.9rem;color:#fff;font-family:Barlow,sans-serif;font-size:0.85rem;margin-bottom:0.6rem;outline:none;">
+          <input type="email" id="cot-email" placeholder="Tu correo electrónico" oninput="actualizarWA()" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.7rem 0.9rem;color:#fff;font-family:Barlow,sans-serif;font-size:0.85rem;margin-bottom:0.6rem;outline:none;">
+          <input type="tel" id="cot-telefono" placeholder="Tu teléfono (opcional)" oninput="actualizarWA()" style="width:100%;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);padding:0.7rem 0.9rem;color:#fff;font-family:Barlow,sans-serif;font-size:0.85rem;margin-bottom:1.5rem;outline:none;">
+          <div style="margin-top:0.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+            <a id="cot-wa-btn" href="#" target="_blank" style="display:flex;align-items:center;gap:0.6rem;background:#25D366;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;text-decoration:none;">
+              <span style="font-size:1.1rem;">💬</span> Confirmar por WhatsApp
+            </a>
+            <a href="https://link.mercadopago.cl/pagolacarboneria" target="_blank" style="display:flex;align-items:center;gap:0.6rem;background:#009EE3;color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);transition:transform 0.2s;text-decoration:none;">
+              <span style="font-size:1.1rem;">💳</span> Pagar con Mercado Pago
+            </a>
+          </div>
+        </div>
+
+        <!-- Panel volumen especial >1000 -->
+        <div id="cot-grande" style="display:none;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:2rem 1rem;height:100%;">
+          <div style="font-family:Bebas Neue,sans-serif;font-size:3.5rem;letter-spacing:3px;color:#fff;line-height:1;margin-bottom:0.5rem;">+1.000</div>
+          <div style="font-family:Barlow Condensed,sans-serif;font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:2rem;">Volumen especial · Atención personalizada</div>
+          <div style="height:1px;background:rgba(255,255,255,0.1);width:100%;margin-bottom:2rem;"></div>
+          <p style="font-family:Barlow,sans-serif;font-size:0.9rem;color:rgba(255,255,255,0.7);font-weight:300;line-height:1.8;margin-bottom:2rem;">Para pedidos de gran volumen te ofrecemos <strong style="color:#fff;font-weight:600;">condiciones especiales y precio negociado</strong>. Uno de nuestros ejecutivos te contactará de inmediato.</p>
+          <a id="cot-grande-wa" href="#" target="_blank" style="display:flex;align-items:center;gap:0.7rem;background:#25D366;color:#fff;padding:1rem 1.8rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.3);text-decoration:none;transition:transform 0.2s;">
+            <span style="font-size:1.2rem;">💬</span> Solicitar atención personalizada
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
 
 <script>
-const APPS_URL = "https://script.google.com/macros/s/AKfycbyXW5OZ6S8jaDl77_4dVXoS9Rqf3VGGQWaIR1LgYt4suKLBA3vVvYSDzyLUWWA_VFOxMg/exec";
+const APPS_URL = "https://script.google.com/macros/s/AKfycbyvxw_o7WvxDKlszgFaAxbgqH8I3huDMVkwwLD3DCC2XUYfDBJ-B7N2YcJdzKNFqU2NJA/exec";
 
 function guardarCotizacion(data) {
   data.tipo = "cotizacion";
@@ -1019,223 +707,60 @@ const PRODUCTOS = {
     nombre: "Bolsa 2,5 kg Quebracho Blanco",
     unidad: "bolsas",
     rangos: [
-      { min: 50,  max: 99,   precio: 1780, label: "50 – 99 bolsas" },
-      { min: 100, max: 199,  precio: 1750, label: "100 – 199 bolsas" },
-      { min: 200, max: 99999,precio: 1730, label: "200 o más bolsas" }
+      { min: 50,  max: 99,   precio: 1870, label: "50 – 99 bolsas" },
+      { min: 100, max: 199,  precio: 1850, label: "100 – 199 bolsas" },
+      { min: 200, max: 99999,precio: 1830, label: "200 o más bolsas" }
     ],
     minimo: 50,
-    precioRetiro: 1710
+    precioRetiro: 1830
   },
   qb_colorado_25: {
     nombre: "Bolsa 2,5 kg Quebracho Colorado",
     unidad: "bolsas",
     rangos: [
-      { min: 50,  max: 99,   precio: 1730, label: "50 – 99 bolsas" },
-      { min: 100, max: 199,  precio: 1699, label: "100 – 199 bolsas" },
-      { min: 200, max: 99999,precio: 1670, label: "200 o más bolsas" }
+      { min: 50,  max: 99,   precio: 1780, label: "50 – 99 bolsas" },
+      { min: 100, max: 199,  precio: 1750, label: "100 – 199 bolsas" },
+      { min: 200, max: 99999,precio: 1730, label: "200 o más bolsas" }
     ],
     minimo: 50,
-    precioRetiro: 1625
+    precioRetiro: 1730
   },
   qb_colorado_2: {
     nombre: "Bolsa 2 kg Quebracho Colorado",
     unidad: "bolsas",
     rangos: [
-      { min: 50,  max: 99,   precio: 1570, label: "50 – 99 bolsas" },
-      { min: 100, max: 199,  precio: 1530, label: "100 – 199 bolsas" },
-      { min: 200, max: 99999,precio: 1490, label: "200 o más bolsas" }
+      { min: 50,  max: 99,   precio: 1630, label: "50 – 99 bolsas" },
+      { min: 100, max: 199,  precio: 1610, label: "100 – 199 bolsas" },
+      { min: 200, max: 99999,precio: 1590, label: "200 o más bolsas" }
     ],
     minimo: 50,
-    precioRetiro: 1450
+    precioRetiro: 1590
   },
   saco_15: {
     nombre: "Saco 15 kg Quebracho Blanco",
     unidad: "kg",
     rangos: [
-      { min: 150, max: 299,  precio: 780, label: "150 – 299 kg" },
-      { min: 300, max: 449,  precio: 765, label: "300 – 449 kg" },
-      { min: 450, max: 99999,precio: 750, label: "450 kg o más" }
+      { min: 150, max: 299,  precio: 850, label: "150 – 299 kg" },
+      { min: 300, max: 449,  precio: 830, label: "300 – 449 kg" },
+      { min: 450, max: 99999,precio: 810, label: "450 kg o más" }
     ],
     minimo: 150,
-    precioRetiro: 730
+    precioRetiro: 800
   },
   granel: {
     nombre: "Carbón Vegetal Premium a Granel",
     unidad: "kg",
     rangos: [
-      { min: 150, max: 299,  precio: 690, label: "150 – 299 kg" },
-      { min: 300, max: 449,  precio: 650, label: "300 – 449 kg" },
-      { min: 450, max: 99999,precio: 625, label: "450 kg o más" }
+      { min: 150, max: 299,  precio: 770, label: "150 – 299 kg" },
+      { min: 300, max: 449,  precio: 750, label: "300 – 449 kg" },
+      { min: 450, max: 99999,precio: 730, label: "450 kg o más" }
     ],
     minimo: 150,
-    precioRetiro: 610
+    precioRetiro: 710
   }
 };
 
 function fmt(n){ return "$" + Math.round(n).toLocaleString("es-CL"); }
-
-function pagarConMP(){
-  var resTotal = document.getElementById("res-total");
-  if(!resTotal || !resTotal.textContent || resTotal.textContent.trim() === ""){
-    alert("Por favor completa la cotización primero.");
-    return;
-  }
-  window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
-}
-
-function abrirMercadoPago(){
-  if(!document.getElementById("res-total") || !document.getElementById("res-total").textContent.trim()){
-    alert("Por favor completa la cotización primero.");
-    return;
-  }
-  window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
-}
-
-
-// ==================== CARRITO ====================
-var carrito = [];
-
-function agregarAlCarrito(){
-  var resTotal = document.getElementById("res-total");
-  var resProd = document.getElementById("res-producto");
-  var resCant = document.getElementById("res-cantidad");
-  var resNeto = document.getElementById("res-neto");
-
-  if(!resTotal || !resTotal.textContent || resTotal.textContent.trim() === ""){
-    alert("Por favor completa la cotización primero.");
-    return;
-  }
-
-  var totalStr = resTotal.textContent.replace(/[^0-9]/g, "");
-  var netoStr = resNeto ? resNeto.textContent.replace(/[^0-9]/g, "") : "0";
-
-  var item = {
-    producto: resProd.textContent,
-    cantidad: resCant.textContent,
-    neto: parseInt(netoStr),
-    total: parseInt(totalStr)
-  };
-
-  carrito.push(item);
-  actualizarCarrito();
-  document.getElementById("carrito").style.display = "block";
-  document.getElementById("carrito").scrollIntoView({behavior:"smooth"});
-
-  // Show confirmation
-  var btn = event.target;
-  var original = btn.innerHTML;
-  btn.innerHTML = "✅ Agregado al carrito";
-  btn.style.background = "rgba(37,211,102,0.2)";
-  setTimeout(function(){ btn.innerHTML = original; btn.style.background = "transparent"; }, 2000);
-}
-
-function actualizarCarrito(){
-  var container = document.getElementById("carrito-items");
-  var totalGeneral = 0;
-
-  if(carrito.length === 0){
-    container.innerHTML = '<p style="color:var(--muted);font-family:Barlow,sans-serif;">El carrito está vacío.</p>';
-    document.getElementById("carrito-total").textContent = "$0";
-    document.getElementById("carrito").style.display = "none";
-    return;
-  }
-
-  var html = "";
-  carrito.forEach(function(item, i){
-    totalGeneral += item.total;
-    html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border);gap:1rem;">' +
-      '<div>' +
-        '<div style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;">' + item.producto + '</div>' +
-        '<div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);">' + item.cantidad + '</div>' +
-      '</div>' +
-      '<div style="display:flex;align-items:center;gap:1.5rem;">' +
-        '<div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;">$' + item.total.toLocaleString("es-CL") + '</div>' +
-        '<button onclick="eliminarDelCarrito(' + i + ')" style="background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.2rem;">✕</button>' +
-      '</div>' +
-    '</div>';
-  });
-
-  container.innerHTML = html;
-  document.getElementById("carrito-total").textContent = "$" + totalGeneral.toLocaleString("es-CL");
-}
-
-function eliminarDelCarrito(i){
-  carrito.splice(i, 1);
-  actualizarCarrito();
-}
-
-function vaciarCarrito(){
-  carrito = [];
-  actualizarCarrito();
-}
-
-function pedirCarritoPorWA(){
-  if(carrito.length === 0){ alert("El carrito está vacío."); return; }
-  var totalGeneral = carrito.reduce(function(a,b){ return a + b.total; }, 0);
-  var msg = "Hola La Carbonería, quisiera confirmar el siguiente pedido:\n\n";
-  carrito.forEach(function(item, i){
-    msg += (i+1) + ". " + item.producto + " — " + item.cantidad + " — $" + item.total.toLocaleString("es-CL") + "\n";
-  });
-  msg += "\nTOTAL: $" + totalGeneral.toLocaleString("es-CL") + "\n\nPor favor confirmar disponibilidad y coordinar despacho.";
-  window.open("https://wa.me/56962438241?text=" + encodeURIComponent(msg), "_blank");
-}
-
-function pagarCarritoMP(){
-  if(carrito.length === 0){ alert("El carrito está vacío."); return; }
-  window.open("https://link.mercadopago.cl/pagolacarboneria", "_blank");
-}
-// ==================== FIN CARRITO ====================
-
-function cerrarModal(){
-  document.getElementById("modal-pago").style.display = "none";
-}
-
-function abrirWA(e){
-  e.preventDefault();
-  var link = document.getElementById("modal-wa-link");
-  var href = link.getAttribute("data-href");
-  if(!href || href === "" || href === "undefined"){
-    // Build WA message from visible results
-    var prod = document.getElementById("res-producto") ? document.getElementById("res-producto").textContent : "";
-    var cant = document.getElementById("res-cantidad") ? document.getElementById("res-cantidad").textContent : "";
-    var total = document.getElementById("res-total") ? document.getElementById("res-total").textContent : "";
-    var nombre = document.getElementById("cot-nombre") ? document.getElementById("cot-nombre").value : "";
-    var correo = document.getElementById("cot-email") ? document.getElementById("cot-email").value : "";
-    var msg = encodeURIComponent(
-      "Hola La Carbonería, quisiera confirmar mi pedido:\n" +
-      (nombre ? "• Nombre: " + nombre + "\n" : "") +
-      (correo ? "• Correo: " + correo + "\n" : "") +
-      "• Producto: " + prod + "\n" +
-      "• Cantidad: " + cant + "\n" +
-      "• Total: " + total + "\n" +
-      "Por favor confirmar disponibilidad y despacho."
-    );
-    href = "https://wa.me/56962438241?text=" + msg;
-  }
-  cerrarModal();
-  setTimeout(function(){ window.open(href, "_blank"); }, 200);
-}
-
-function confirmarWADirecto(){
-  var prod = document.getElementById("res-producto") ? document.getElementById("res-producto").textContent : "";
-  var cant = document.getElementById("res-cantidad") ? document.getElementById("res-cantidad").textContent : "";
-  var total = document.getElementById("res-total") ? document.getElementById("res-total").textContent : "";
-  var nombre = document.getElementById("cot-nombre") ? document.getElementById("cot-nombre").value : "";
-  var correo = document.getElementById("cot-email") ? document.getElementById("cot-email").value : "";
-  var telefono = document.getElementById("cot-telefono") ? document.getElementById("cot-telefono").value : "";
-
-  var msg = encodeURIComponent(
-    "Hola La Carbonería, quisiera confirmar mi pedido:\n" +
-    (nombre ? "• Nombre: " + nombre + "\n" : "") +
-    (correo ? "• Correo: " + correo + "\n" : "") +
-    (telefono ? "• Teléfono: " + telefono + "\n" : "") +
-    "• Producto: " + prod + "\n" +
-    "• Cantidad: " + cant + "\n" +
-    "• Total: " + total + "\n" +
-    "Por favor confirmar disponibilidad y coordinar despacho."
-  );
-  window.open("https://wa.me/56962438241?text=" + msg, "_blank");
-}
 
 function actualizarWA(){
   // Re-run calcular to refresh WhatsApp link with updated client data
@@ -1292,7 +817,7 @@ function calcular(){
       "• Total con IVA: " + fmt(total) + "\n" +
       "¿Pueden confirmar disponibilidad para retirar en El Olivar 2572, La Pintana?"
     );
-    document.getElementById("cot-wa-btn").href = "https://wa.me/56962438241?text=" + msg;
+    document.getElementById("cot-wa-btn").href = "https://wa.me/56920571175?text=" + msg;
     return;
   }
 
@@ -1323,7 +848,7 @@ function calcular(){
       "• Cantidad: " + cantidad.toLocaleString("es-CL") + " " + p.unidad + "\n" +
       "Quisiera una atención personalizada para este volumen."
     );
-    document.getElementById("cot-grande-wa").href = "https://wa.me/56962438241?text=" + msg;
+    document.getElementById("cot-grande-wa").href = "https://wa.me/56920571175?text=" + msg;
     return;
   } else {
     document.getElementById("cot-grande").style.display="none";
@@ -1357,7 +882,7 @@ function calcular(){
     "• Total estimado (con IVA): " + fmt(total) + "\n" +
     "Por favor confirmar disponibilidad y despacho."
   );
-  document.getElementById("cot-wa-btn").href = "https://wa.me/56962438241?text=" + msg;
+  document.getElementById("cot-wa-btn").href = "https://wa.me/56920571175?text=" + msg;
 }
 </script>
 
@@ -1452,59 +977,68 @@ function calcular(){
   </div>
 </section>
 
-
-
-<!-- SECCIÓN FORMULARIO GOOGLE FORMS -->
-<section id="formulario" style="background:var(--bg2);padding:6rem 3rem;">
+<section id="cobertura" style="background:var(--bg);padding:6rem 3rem;">
   <div class="container">
-    <div class="section-num anim-fade-in">11</div>
-    <p class="section-label anim-fade-up">Contáctanos directamente</p>
-    <h2 class="section-title anim-fade-up d2">Formulario<br>de contacto</h2>
-    <p class="section-body anim-fade-up d3" style="margin-bottom:3rem;">Completa el formulario y te responderemos a la brevedad. También puedes escribirnos directamente por WhatsApp.</p>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
-      
-      <div style="background:#fff;box-shadow:4px 4px 0 #0a0a0a;">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSfLdNwwc0OCK7yLib8jYscH16Lc-fSUwRdIReCzd2rN8NajJw/viewform?embedded=true" 
-          width="100%" 
-          height="800" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0"
-          style="display:block;">
-          Cargando…
-        </iframe>
-      </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;">
 
       <div>
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:1rem;">OTRAS FORMAS DE CONTACTO</div>
-        
-        <div style="border-left:3px solid #e8903a;padding:1.2rem 1.5rem;background:#fff;margin-bottom:1rem;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:2px;margin-bottom:0.3rem;">WhatsApp</div>
-          <a href="https://wa.me/56962438241" target="_blank" style="font-size:0.88rem;color:#0a0a0a;text-decoration:none;">+56 9 6243 8241</a>
+        <div class="section-num anim-fade-in">09</div>
+        <p class="section-label anim-fade-up">Despacho y cobertura</p>
+        <h2 class="section-title anim-fade-up d2">¿Dónde despachamos?</h2>
+        <p class="section-body anim-fade-up d3">Operamos desde La Pintana. Despachamos a toda la Región Metropolitana con flete cotizado por separado. Para regiones, coordinamos contacto previo y cotización de flete según destino y volumen.</p>
+
+        <div style="margin-top:2rem;display:grid;gap:1px;background:var(--border);border:2px solid var(--bg3);" class="anim-fade-up d3">
+          <div style="background:#fff;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;">Región Metropolitana</div>
+              <div style="font-size:0.75rem;color:var(--muted);font-weight:300;">Todas las comunas · Flete cotizado por separado</div>
+            </div>
+            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;font-weight:700;background:#0a0a0a;color:#fff;padding:0.3rem 0.8rem;">48H</div>
+          </div>
+          <div style="background:#fff;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;">Regiones</div>
+              <div style="font-size:0.75rem;color:var(--muted);font-weight:300;">Requiere contacto previo · Flete cotizado a parte</div>
+            </div>
+            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;font-weight:700;background:var(--bg2);color:var(--text);padding:0.3rem 0.8rem;border:1px solid var(--border);">Consultar</div>
+          </div>
+          <div style="background:#fff;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;">Retiro en bodega</div>
+              <div style="font-size:0.75rem;color:var(--muted);font-weight:300;">El Olivar 2572, La Pintana · Sin mínimo</div>
+            </div>
+            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;font-weight:700;background:#0a0a0a;color:#fff;padding:0.3rem 0.8rem;">Inmediato</div>
+          </div>
         </div>
 
-        <div style="border-left:3px solid #e8903a;padding:1.2rem 1.5rem;background:#fff;margin-bottom:1rem;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:2px;margin-bottom:0.3rem;">Correo electrónico</div>
-          <a href="mailto:comercial@we-trade.cl" style="font-size:0.88rem;color:#0a0a0a;text-decoration:none;">comercial@we-trade.cl</a>
+        <div style="margin-top:2.5rem;">
+          <p class="section-label" style="margin-bottom:1rem;">Síguenos en Instagram</p>
+          <a href="https://instagram.com/lacarboneriachile" target="_blank" style="display:inline-flex;align-items:center;gap:0.8rem;background:var(--bg3);color:#fff;padding:0.85rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:4px 4px 0 rgba(0,0,0,0.15);text-decoration:none;">
+            <span style="font-size:1.1rem;">📸</span> @lacarboneriachile
+          </a>
         </div>
+      </div>
 
-        <div style="border-left:3px solid #e8903a;padding:1.2rem 1.5rem;background:#fff;margin-bottom:1rem;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:2px;margin-bottom:0.3rem;">Dirección</div>
-          <div style="font-size:0.88rem;color:#666;">El Olivar 2572, La Pintana<br>Región Metropolitana, Santiago</div>
+      <div class="anim-slide-left d3">
+        <p class="section-label" style="margin-bottom:1rem;">Nuestra bodega</p>
+        <div style="border:2px solid var(--bg3);overflow:hidden;">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.5!2d-70.6833!3d-33.5667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM0JzAwLjAiUyA3MMKwNDAnNTkuOSJX!5e0!3m2!1ses!2scl!4v1234567890"
+            width="100%" height="350" style="border:0;display:block;" allowfullscreen="" loading="lazy">
+          </iframe>
         </div>
-
-        <div style="border-left:3px solid #e8903a;padding:1.2rem 1.5rem;background:#fff;">
-          <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:2px;margin-bottom:0.3rem;">Horario de atención</div>
-          <div style="font-size:0.88rem;color:#666;">Lunes a Viernes<br>8:30 – 17:30 hrs</div>
+        <div style="background:var(--bg3);padding:1.2rem 1.5rem;display:flex;align-items:center;gap:1rem;">
+          <span style="font-size:1rem;">📍</span>
+          <div>
+            <div style="font-family:Bebas Neue,sans-serif;font-size:1rem;letter-spacing:1.5px;color:#fff;">El Olivar 2572, La Pintana</div>
+            <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);">Lun – Vie · 8:30 – 17:30 hrs</div>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
@@ -1520,7 +1054,7 @@ function calcular(){
         <a href="#contacto" class="footer-link">Contacto</a>
       </div>
     </div>
-    <div class="footer-copy">© 2025 La Carbonería · WE TRADE SPA · <a href="#" onclick="document.getElementById('modal-tyc').style.display='flex';return false;" style="color:rgba(255,255,255,0.5);text-decoration:underline;font-size:inherit;">Términos y Condiciones</a> · El Olivar 2572, La Pintana, Santiago · comercial@we-trade.cl · +56 9 6243 8241 / +56 9 9579 0362 / +56 9 9758 6538 · Lun–Vie 8:30–17:30</div>
+    <div class="footer-copy">© 2025 La Carbonería · El Olivar 2572, La Pintana, Santiago · comercial@we-trade.cl · +56 9 2057 1175 / +56 9 9579 0362 / +56 9 9758 6538 · Lun–Vie 8:30–17:30</div>
   </div>
 </footer>
 <script>
@@ -1542,45 +1076,21 @@ function filterProducts(cat,btn){
   });
 }
 function handleSubmit(){
-  const nombre = document.querySelectorAll("#contacto .form-input")[0] ? document.querySelectorAll("#contacto .form-input")[0].value : "";
+  const nombre = document.querySelector("#contacto input[type=text]") ? document.querySelectorAll("#contacto .form-input")[0].value : "";
   const empresa = document.querySelectorAll("#contacto .form-input")[1] ? document.querySelectorAll("#contacto .form-input")[1].value : "";
   const correo = document.querySelectorAll("#contacto .form-input")[2] ? document.querySelectorAll("#contacto .form-input")[2].value : "";
   const telefono = document.querySelectorAll("#contacto .form-input")[3] ? document.querySelectorAll("#contacto .form-input")[3].value : "";
-  const producto = document.querySelector("#contacto .form-select") ? document.querySelector("#contacto .form-select").value : "";
   const mensaje = document.querySelector("#contacto .form-textarea") ? document.querySelector("#contacto .form-textarea").value : "";
   const msg = document.getElementById("formMsg");
 
-  if(!nombre || !correo){
-    msg.textContent = "Por favor completa nombre y correo.";
-    msg.style.display="block";
-    return;
-  }
+  fetch("https://script.google.com/macros/s/AKfycbyvxw_o7WvxDKlszgFaAxbgqH8I3huDMVkwwLD3DCC2XUYfDBJ-B7N2YcJdzKNFqU2NJA/exec", {
+    method: "POST", mode: "no-cors",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({tipo:"consulta", nombre:nombre, empresa:empresa, correo:correo, telefono:telefono, mensaje:mensaje})
+  }).catch(e => console.log(e));
 
-  fetch("https://formspree.io/f/xwvakoao", {
-    method: "POST",
-    headers: {"Content-Type": "application/json", "Accept": "application/json"},
-    body: JSON.stringify({
-      nombre: nombre,
-      empresa: empresa,
-      correo: correo,
-      telefono: telefono,
-      producto: producto,
-      mensaje: mensaje
-    })
-  })
-  .then(r => r.json())
-  .then(data => {
-    if(data.ok){
-      msg.textContent = "✓ Mensaje enviado — Te contactaremos pronto.";
-      msg.style.display="block";
-      setTimeout(()=>{msg.style.display="none";},5000);
-    }
-  })
-  .catch(e => {
-    msg.textContent = "✓ Mensaje enviado — Te contactaremos pronto.";
-    msg.style.display="block";
-    setTimeout(()=>{msg.style.display="none";},5000);
-  });
+  msg.style.display="block";
+  setTimeout(()=>{msg.style.display="none";},5000);
 }
 document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
   a.addEventListener("click",e=>{
@@ -1590,121 +1100,5 @@ document.querySelectorAll("a[href^=\"#\"]").forEach(a=>{
   });
 });
 </script>
-
-<div id="modal-pago" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:2rem;">
-  <div style="background:#fff;max-width:480px;width:100%;padding:2.5rem;position:relative;">
-    <button onclick="cerrarModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--muted);">✕</button>
-    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem;">Resumen de pago</div>
-    <div style="font-family:Bebas Neue,sans-serif;font-size:1.2rem;letter-spacing:1.5px;margin-bottom:0.3rem;" id="modal-producto"></div>
-    <div style="font-family:Bebas Neue,sans-serif;font-size:2.5rem;letter-spacing:2px;color:var(--text);margin-bottom:2rem;" id="modal-total"></div>
-    <div style="height:1px;background:var(--border);margin-bottom:1.5rem;"></div>
-    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:1rem;">Elige cómo pagar</div>
-    <div style="display:flex;flex-direction:column;gap:0.8rem;">
-      <a id="modal-mp-link" href="#" target="_blank" onclick="cerrarModal()" style="display:flex;align-items:center;gap:0.8rem;background:#009EE3;color:#fff;padding:1rem 1.5rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">
-        <span style="font-size:1.2rem;">💳</span> Pagar online con Mercado Pago
-      </a>
-
-      <div style="font-size:0.75rem;color:var(--muted);font-weight:300;text-align:center;margin-top:0.5rem;">También puedes transferir a Banco Santander · Cta Cte 7237951-9 · RUT 76.796.173-1</div>
-    </div>
-  </div>
-</div>
-
-<!-- MODAL TÉRMINOS Y CONDICIONES -->
-<div id="modal-tyc" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;padding:1rem;overflow-y:auto;">
-  <div style="background:#fff;max-width:720px;width:100%;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;margin:auto;">
-    <button onclick="document.getElementById('modal-tyc').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888;">✕</button>
-    
-    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:#888;margin-bottom:0.5rem;">WE TRADE SPA · RUT 76.796.173-1</div>
-    <h2 style="font-family:Bebas Neue,sans-serif;font-size:2rem;letter-spacing:3px;margin-bottom:0.3rem;">Términos y Condiciones</h2>
-    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.7rem;letter-spacing:2px;color:#888;margin-bottom:2rem;">Última actualización: Mayo 2026</div>
-
-    <div style="font-family:Barlow,sans-serif;font-size:0.88rem;line-height:1.7;color:#333;">
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">1. Identificación del proveedor</h3>
-      <p>La Carbonería es una marca comercial de <strong>WE TRADE SPA</strong>, RUT 76.796.173-1, domiciliada en El Olivar 2572, La Pintana, Región Metropolitana, Chile. Correo electrónico: comercial@we-trade.cl. Teléfono: +56 9 6243 8241.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">2. Aceptación de los términos</h3>
-      <p>Al acceder y utilizar el sitio web lacarboneriacl.cl y/o realizar una compra, el usuario acepta íntegramente los presentes Términos y Condiciones, conforme a la legislación chilena vigente, incluyendo la Ley N° 19.496 sobre Protección de los Derechos de los Consumidores y sus modificaciones.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">3. Productos y precios</h3>
-      <p>Los precios publicados en el sitio incluyen IVA (19%) y flete para la Región Metropolitana, salvo indicación expresa en contrario. WE TRADE SPA se reserva el derecho de modificar los precios sin previo aviso. El precio válido es el vigente al momento de confirmar la compra. Las imágenes son referenciales.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">4. Proceso de compra y pago</h3>
-      <p>El cliente puede cotizar en línea y confirmar su pedido a través de WhatsApp o mediante pago electrónico (Mercado Pago u otros medios habilitados). La compra se entiende perfeccionada una vez confirmado el pago. WE TRADE SPA emitirá el documento tributario correspondiente (boleta o factura) según lo solicitado por el cliente.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">5. Despacho y entrega</h3>
-      <p>Los despachos se realizan dentro de la Región Metropolitana en un plazo de 48 horas hábiles desde la confirmación del pago. Para regiones, el plazo y costo de flete se coordinan previamente. WE TRADE SPA no se hace responsable por retrasos causados por fuerza mayor o situaciones ajenas a su control.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">6. Derecho a retracto</h3>
-      <p>Conforme al artículo 3° bis de la Ley N° 19.496, el consumidor tiene derecho a retractarse dentro de los 10 días corridos siguientes a la recepción del producto, siempre que el producto no haya sido utilizado y se encuentre en su embalaje original. Para ejercer este derecho, el cliente debe comunicarse a comercial@we-trade.cl.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">7. Garantía legal</h3>
-      <p>Los productos cuentan con la garantía legal establecida en la Ley N° 19.496. En caso de que el producto presente defectos o no corresponda a lo ofrecido, el cliente podrá solicitar la reposición, reparación o devolución del precio pagado dentro del plazo legal.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">8. Protección de datos personales</h3>
-      <p>WE TRADE SPA trata los datos personales de sus clientes conforme a la Ley N° 19.628 sobre Protección de la Vida Privada. Los datos recopilados se utilizan exclusivamente para gestionar pedidos y comunicaciones comerciales. El titular puede solicitar acceso, rectificación o eliminación de sus datos escribiendo a comercial@we-trade.cl.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">9. Propiedad intelectual</h3>
-      <p>Todos los contenidos del sitio web lacarboneriacl.cl, incluyendo textos, imágenes, logotipos y diseños, son propiedad de WE TRADE SPA o sus licenciantes. Queda prohibida su reproducción sin autorización expresa.</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">10. Jurisdicción y legislación aplicable</h3>
-      <p>Los presentes Términos y Condiciones se rigen por las leyes de la República de Chile. Para cualquier controversia derivada de la relación comercial, las partes se someten a la jurisdicción de los Tribunales de Justicia competentes de Santiago de Chile, sin perjuicio del derecho del consumidor de recurrir al Servicio Nacional del Consumidor (SERNAC).</p>
-
-      <h3 style="font-family:Bebas Neue,sans-serif;font-size:1.1rem;letter-spacing:2px;margin:1.5rem 0 0.5rem;">11. Contacto</h3>
-      <p>Para consultas, reclamos o ejercicio de derechos, contactar a: <strong>comercial@we-trade.cl</strong> · +56 9 6243 8241 · El Olivar 2572, La Pintana, Santiago.</p>
-
-    </div>
-
-    <div style="margin-top:2rem;text-align:center;">
-      <button onclick="document.getElementById('modal-tyc').style.display='none'" style="background:#0a0a0a;color:#fff;border:none;padding:0.85rem 2rem;font-family:Barlow Condensed,sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;">Cerrar</button>
-    </div>
-  </div>
-</div>
-
-
-<!-- MODAL CAMIÓN COMPLETO -->
-<div id="modal-camion" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:#0a0a0a;max-width:520px;width:100%;padding:2.5rem;position:relative;border-left:4px solid #e8903a;">
-    <button onclick="document.getElementById('modal-camion').style.display='none'" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#888;">✕</button>
-    
-    <div style="font-family:Barlow Condensed,sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:#e8903a;margin-bottom:0.5rem;">VOLUMEN ESPECIAL</div>
-    <h2 style="font-family:Bebas Neue,sans-serif;font-size:2.2rem;letter-spacing:3px;color:#fff;margin-bottom:0.3rem;">🚛 Camión Completo</h2>
-    <div style="width:40px;height:2px;background:#e8903a;margin-bottom:1.5rem;"></div>
-
-    <div style="font-family:Barlow,sans-serif;font-size:0.88rem;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:1.5rem;">
-      Para clientes que necesitan grandes volúmenes, ofrecemos la opción de <strong style="color:#fff;">camión completo</strong> con precio preferencial exclusivo.
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem;">
-      <div style="background:rgba(255,255,255,0.05);padding:1.2rem;border-left:2px solid #e8903a;">
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:0.4rem;">Quebracho Blanco</div>
-        <div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;">Saco 15 kg</div>
-        <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">~1.800 sacos · 27 ton</div>
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:1px;color:#e8903a;margin-top:0.5rem;font-weight:700;">PRECIO PREFERENCIAL</div>
-      </div>
-      <div style="background:rgba(255,255,255,0.05);padding:1.2rem;border-left:2px solid #e8903a;">
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:#888;margin-bottom:0.4rem;">Quebracho Colorado</div>
-        <div style="font-family:Bebas Neue,sans-serif;font-size:1.3rem;letter-spacing:2px;color:#fff;">A Granel</div>
-        <div style="font-family:Barlow,sans-serif;font-size:0.8rem;color:rgba(255,255,255,0.6);margin-top:0.3rem;">~27.000 kg · 27 ton</div>
-        <div style="font-family:Barlow Condensed,sans-serif;font-size:0.75rem;letter-spacing:1px;color:#e8903a;margin-top:0.5rem;font-weight:700;">PRECIO PREFERENCIAL</div>
-      </div>
-    </div>
-
-    <div style="background:rgba(232,144,58,0.1);border:1px solid rgba(232,144,58,0.3);padding:1rem;margin-bottom:1.5rem;font-family:Barlow,sans-serif;font-size:0.82rem;color:rgba(255,255,255,0.7);">
-      💡 El precio se cotiza de forma personalizada según disponibilidad, destino y frecuencia de compra.
-    </div>
-
-    <div style="display:flex;flex-direction:column;gap:0.8rem;">
-      <a href="https://wa.me/56962438241?text=Hola%20La%20Carboner%C3%ADa%2C%20me%20interesa%20cotizar%20un%20cam%C3%B3n%20completo%20de%20carb%C3%B3n%20quebracho.%20%C2%BFPueden%20enviarme%20informaci%C3%B3n%20y%20precio%20preferencial%3F" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:#25D366;color:#fff;padding:1rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;">
-        <svg style="width:18px;height:18px;" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Consultar por WhatsApp
-      </a>
-      <a href="mailto:comercial@we-trade.cl?subject=Consulta%20Camión%20Completo%20Carbón%20Quebracho&body=Hola%2C%20me%20interesa%20cotizar%20un%20camión%20completo%20de%20carbón%20quebracho." style="display:flex;align-items:center;justify-content:center;gap:0.6rem;background:transparent;color:#fff;padding:0.9rem;font-family:Barlow Condensed,sans-serif;font-size:0.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,0.2);">
-        ✉️ Enviar correo
-      </a>
-    </div>
-  </div>
-</div>
-
 </body>
 </html>
