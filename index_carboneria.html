@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Carbonería — Carbón Premium Argentino</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --black:#0a0a0a;
+  --white:#f5f4f0;
+  --gold:#c8871a;
+  --gold2:#e09c2a;
+  --fire:#e84c0a;
+  --grey:#1a1a1a;
+  --grey2:#2a2a2a;
+  --muted:#888;
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Barlow",sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden;}
+a{color:inherit;text-decoration:none;}
+img{display:block;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1rem 2.5rem;background:rgba(10,10,10,0.92);border-bottom:1px solid rgba(200,135,26,0.3);backdrop-filter:blur(16px);transition:all 0.3s;}
+.nav-logo{font-family:"Bebas Neue",sans-serif;font-size:1.6rem;letter-spacing:5px;color:var(--gold);}
+.nav-links{display:flex;gap:2rem;align-items:center;}
+.nav-links a{font-family:"Barlow Condensed",sans-serif;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:600;transition:color 0.2s;}
+.nav-links a:hover{color:var(--gold);}
+.nav-cta{background:var(--gold);color:var(--black)!important;padding:0.5rem 1.2rem;font-weight:800!important;letter-spacing:2px!important;transition:background 0.2s!important;}
+.nav-cta:hover{background:var(--gold2)!important;color:var(--black)!important;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s;}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('img00.jpg');background-size:cover;background-position:center;filter:brightness(0.35);}
+.hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.3) 60%,rgba(200,135,26,0.1) 100%);}
+.hero-content{position:relative;z-index:2;padding:7rem 2.5rem 4rem;max-width:1200px;margin:0 auto;width:100%;display:block;}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(200,135,26,0.15);border:1px solid var(--gold);padding:0.4rem 1rem;margin-bottom:1.5rem;}
+.hero-badge span{font-family:"Barlow Condensed",sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.hero-badge-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.5;transform:scale(1.4);}}
+.hero-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(4.5rem,10vw,9rem);line-height:0.88;letter-spacing:3px;margin-bottom:1.5rem;}
+.hero-title .fire{color:var(--gold);}
+.hero-desc{font-size:1rem;color:rgba(245,244,240,0.7);max-width:420px;line-height:1.9;margin-bottom:2.5rem;font-weight:300;}
+.hero-stats{display:flex;gap:2.5rem;margin-bottom:2.5rem;}
+.stat{border-left:2px solid var(--gold);padding-left:1rem;}
+.stat-num{font-family:"Bebas Neue",sans-serif;font-size:2.2rem;color:var(--gold);line-height:1;}
+.stat-label{font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-block;padding:0.9rem 2rem;font-family:"Barlow Condensed",sans-serif;font-size:0.82rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.btn-fire{background:var(--gold);color:var(--black);border:2px solid var(--gold);}
+.btn-fire:hover{background:var(--gold2);border-color:var(--gold2);}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(245,244,240,0.4);}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold);}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center;}
+.hero-img-wrap{position:relative;}
+.hero-img-wrap img{width:380px;max-width:100%;filter:drop-shadow(0 20px 60px rgba(200,135,26,0.3));animation:floatUp 3s ease-in-out infinite alternate;}
+@keyframes floatUp{from{transform:translateY(0);}to{transform:translateY(-12px);}}
+.hero-glow{position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:200px;height:60px;background:radial-gradient(ellipse,rgba(200,135,26,0.4) 0%,transparent 70%);filter:blur(20px);}
+.scroll-hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:0.5rem;opacity:0.4;}
+.scroll-hint span{font-family:"Barlow Condensed",sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--white),transparent);animation:scrollAnim 1.5s ease-in-out infinite;}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top;}50%{transform:scaleY(1);transform-origin:top;}51%{transform:scaleY(1);transform-origin:bottom;}100%{transform:scaleY(0);transform-origin:bottom;}}
+
+/* MARQUEE */
+.marquee-wrap{background:var(--gold);padding:0.75rem 0;overflow:hidden;}
+.marquee-track{display:flex;white-space:nowrap;animation:marquee 20s linear infinite;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+.marquee-item{font-family:"Bebas Neue",sans-serif;font-size:0.95rem;letter-spacing:5px;padding:0 2.5rem;color:var(--black);}
+.marquee-sep{color:rgba(10,10,10,0.3);}
+
+/* SECTION BASE */
+section{padding:5rem 2.5rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.section-tag{font-family:"Barlow Condensed",sans-serif;font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
+.section-title{font-family:"Bebas Neue",sans-serif;font-size:clamp(3rem,6vw,5.5rem);line-height:0.9;letter-spacing:2px;margin-bottom:1.5rem;}
+.section-line{width:50px;height:3px;background:var(--gold);margin-bottom:2rem;}
+
+/* PRODUCTOS */
+#productos{background:var(--black);}
+.prod-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem;}
+.prod-desc{font-size:1rem;color:rgba(245,244,240,0.6);line-height:1.9;font-weight:300;max-width:460px;}
+.vol-legend{display:flex;gap:1rem;flex-wrap:wrap;}
+.vol-pill{font-family:"Barlow Condensed",sans-serif;font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;padding:0.3rem 0.8rem;border:1px solid;font-weight:700;}
+.vol-pill.p50{border-color:rgba(200,135,26,0.4);color:rgba(200,135,26,0.7);}
+.vol-pill.p100{border-color:rgba(200,135,26,0.7);color:rgba(200,135,26,0.9);}
+.vol-pill.p150{border-color:var(--gold);color:var(--gold);}
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+.prod-card{background:var(--grey);position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.prod-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
+.prod-card:hover::before{transform:scaleX(1);}
+.prod-img-wrap{background:var(--grey2);height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:1.5rem;position:relative;}
+.prod-img-wrap img{max-height:240px;max-width:90%;object-fit:contain;transition:transform 0.4s ease;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));}
+.prod-card:hover .prod-img-wrap img{transform:scale(1.05);}
+.prod-body{padding:1.5rem 2rem 2rem;flex:1;display:flex;flex-direction:column;}
+.prod-tag{font-family:"Barlow Condensed",sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.5rem;}
+.prod-name{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:2px;margin-bottom:0.5rem;line-height:1;}
+.prod-desc-short{font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.5rem;font-weight:300;}
+.price-table{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.2rem;display:flex;flex-direction:column;gap:0;}
+.price-row{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.price-row:last-child{border-bottom:none;}
+.price-vol{font-family:"Barlow Condensed",sans-serif;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.price-val{font-family:"Bebas Neue",sans-serif;font-size:1.3rem;letter-spacing:1px;color:var(--white);}
+.price-row.best .price-vol{color:var(--gold);}
+.price-row.best .price-val{color:var(--gold);font-size:1.5rem;}
+.price-iva{font-family:"Barlow",sans-serif;font-size:0.65rem;color:var(--muted);font-weight:400;margin-left:4px;}
+
+/* NOSOTROS */
+#nosotros{background:var(--grey);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
+.about-img{position:relative;}
+.about-img img{width:100%;height:460px;object-fit:cover;}
+.about-img-label{position:absolute;bottom:1.5rem;right:1.5rem;background:var(--gold);padding:0.8rem 1.2rem;}
+.about-img-label span{font-family:"Bebas Neue",sans-serif;font-size:1.4rem;letter-spacing:3px;color:var(--black);display:block;line-height:1;}
+.about-img-label small{font-family:"Barlow Condensed",sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:rgba(10,10,10,0.6);font-weight:700;}
+.about-text p{font-size:1rem;color:rgba(245,244,240,0.65);line-height:1.9;font-weight:300;margin-bottom:1.5rem;}
+.feature-list{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
+.feature-item{display:flex;gap:1rem;align-items:flex-start;}
+.feature-icon{width:36px;height:36px;background:rgba(200,135,26,0.15);border:1px solid rgba(200,135,26,0.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1rem;}
+.feature-text strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;font-weight:700;margin-bottom:2px;}
+.feature-text span{font-size:0.82rem;color:var(--muted);}
+
+/* CAPACIDAD / HERO2 */
+#capacidad{position:relative;padding:0;overflow:hidden;min-height:500px;display:flex;align-items:center;}
+.cap-bg{position:absolute;inset:0;background-image:url('img01.jpg');background-size:cover;background-position:center 30%;filter:brightness(0.25);}
+.cap-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,0.95) 40%,transparent 100%);}
+.cap-content{position:relative;z-index:2;padding:5rem 2.5rem;max-width:1200px;margin:0 auto;width:100%;}
+.cap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;margin-top:3rem;}
+.cap-item{border:1px solid rgba(200,135,26,0.2);padding:2rem;background:rgba(10,10,10,0.5);backdrop-filter:blur(8px);}
+.cap-num{font-family:"Bebas Neue",sans-serif;font-size:3.5rem;color:var(--gold);line-height:1;margin-bottom:0.5rem;letter-spacing:2px;}
+.cap-label{font-family:"Barlow Condensed",sans-serif;font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;color:rgba(245,244,240,0.5);font-weight:700;margin-bottom:0.5rem;}
+.cap-desc{font-size:0.85rem;color:var(--muted);line-height:1.6;}
+
+/* CONTACTO */
+#contacto{background:var(--black);}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem;}
+.contact-item{display:flex;gap:1rem;align-items:center;}
+.contact-icon{width:44px;height:44px;background:rgba(200,135,26,0.1);border:1px solid rgba(200,135,26,0.3);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
+.contact-label{font-family:"Barlow Condensed",sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.contact-val{font-size:0.95rem;color:var(--white);font-weight:500;margin-top:2px;}
+.contact-form{display:flex;flex-direction:column;gap:1rem;}
+.form-group{display:flex;flex-direction:column;gap:0.4rem;}
+.form-label{font-family:"Barlow Condensed",sans-serif;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+.form-input{background:var(--grey);border:1px solid rgba(255,255,255,0.1);padding:0.85rem 1rem;color:var(--white);font-family:"Barlow",sans-serif;font-size:0.9rem;outline:none;transition:border-color 0.2s;}
+.form-input:focus{border-color:var(--gold);}
+.form-input::placeholder{color:var(--muted);}
+textarea.form-input{resize:vertical;min-height:120px;}
+.btn-submit{background:var(--gold);color:var(--black);border:none;padding:1rem 2rem;font-family:"Barlow Condensed",sans-serif;font-size:0.85rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;width:100%;}
+.btn-submit:hover{background:var(--gold2);}
+
+/* FOOTER */
+footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:3rem 2.5rem;}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;align-items:start;}
+.footer-brand .nav-logo{font-size:1.4rem;margin-bottom:0.75rem;}
+.footer-brand p{font-size:0.82rem;color:var(--muted);line-height:1.7;max-width:220px;}
+.footer-links h4,.footer-contact h4{font-family:"Barlow Condensed",sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1rem;}
+.footer-links ul{list-style:none;display:flex;flex-direction:column;gap:0.5rem;}
+.footer-links a{font-size:0.85rem;color:var(--muted);transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-contact p{font-size:0.85rem;color:var(--muted);line-height:1.8;}
+.footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-size:0.78rem;color:rgba(136,136,136,0.6);}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  .hamburger{display:flex;}
+  .hero-content{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;}
+  .hero-visual{display:none;}
+  .hero-stats{gap:1.5rem;}
+  .prod-grid{grid-template-columns:1fr;}
+  .prod-intro{grid-template-columns:1fr;gap:1.5rem;}
+  .about-grid{grid-template-columns:1fr;}
+  .about-img img{height:300px;}
+  .cap-grid{grid-template-columns:1fr;gap:1rem;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;gap:2rem;}
+  .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+  section{padding:3.5rem 1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">La Carbonería</a>
+  <div class="nav-links">
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#capacidad">Capacidad</a>
+    <a href="#contacto" class="nav-cta">Cotizar ahora</a>
+  </div>
+  <div class="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        <span>Carbón Argentino · Calidad Exportación</span>
+      </div>
+      <h1 class="hero-title">
+        <span>Carbón</span>
+        <span class="fire">Que</span>
+        <span class="fire">bracho</span>
+        <span>Premium</span>
+      </h1>
+      <p class="hero-desc">Importado directamente desde Argentina. Mayor poder calorífico, cero chispas, larga duración. El carbón que eligen los profesionales.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">320T</div>
+          <div class="stat-label">Capacidad mensual</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">+18</div>
+          <div class="stat-label">Años en mercado</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Certificado origen</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <a href="#productos" class="btn btn-fire">Ver productos y precios</a>
+        <a href="#contacto" class="btn btn-outline">Cotizar ahora</a>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">Quebracho Blanco</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">No Chispeante</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Carbón Argentino</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Calidad Exportación</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">120 Toneladas / Mes</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">White Label Disponible</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Quebracho Colorado</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Certificado de Origen</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Quebracho Blanco</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">No Chispeante</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Carbón Argentino</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Calidad Exportación</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">120 Toneladas / Mes</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">White Label Disponible</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Quebracho Colorado</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Certificado de Origen</span><span class="marquee-item marquee-sep">✦</span>
+  </div>
+</div>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+  <div class="section-inner">
+    <div class="prod-intro">
+      <div>
+        <p class="section-tag">Nuestra línea</p>
+        <h2 class="section-title">Productos<br>& Precios</h2>
+        <div class="section-line"></div>
+      </div>
+      <div>
+        <p class="prod-desc">Precios por unidad según volumen de compra, netos + IVA. Disponibilidad para envasado white label y formatos personalizados para retail y distribución.</p>
+        <div class="vol-legend" style="margin-top:1.2rem;">
+          <div class="vol-pill p50">50 uds</div>
+          <div class="vol-pill p100">100 uds</div>
+          <div class="vol-pill p150">150+ uds ★ Mejor precio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prod-grid">
+
+      <!-- QB BLANCO 2.5kg -->
+      <div class="prod-card">
+        <div class="prod-img-wrap">
+          <img src="img03.jpg" alt="Quebracho Blanco 2,5kg">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Quebracho Blanco · Argentina</div>
+          <div class="prod-name">QB Blanco 2,5 kg</div>
+          <div class="prod-desc-short">Mayor poder calorífico. No chispeante. Brasa uniforme y de larga duración. Ideal para parrilla profesional y retail.</div>
+          <div class="price-table">
+            <div class="price-row">
+              <span class="price-vol">× 50 unidades</span>
+              <span class="price-val">$1.890 <span class="price-iva">+ IVA</span></span>
+            </div>
+            <div class="price-row">
+              <span class="price-vol">× 100 unidades</span>
+              <span class="price-val">$1.870 <span class="price-iva">+ IVA</span></span>
+            </div>
+            <div class="price-row best">
+              <span class="price-vol">× 150+ unidades ★</span>
+              <span class="price-val">$1.850 <span class="price-iva">+ IVA</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QB COLORADO 2.5kg -->
+      <div class="prod-card">
+        <div class="prod-img-wrap">
+          <img src="img04.jpg" alt="Quebracho Colorado 2,5kg">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Quebracho Colorado · Argentina</div>
+          <div class="prod-name">QB Colorado 2,5 kg</div>
+          <div class="prod-desc-short">Carbón de quebracho colorado, madera densa y de alta energía. Ideal para asados de larga duración y uso gastronómico.</div>
+          <div class="price-table">
+            <div class="price-row">
+              <span class="price-vol">× 50 unidades</span>
+              <span class="price-val">$1.790 <span class="price-iva">+ IVA</span></span>
+            </div>
+            <div class="price-row">
+              <span class="price-vol">× 100 unidades</span>
+              <span class="price-val">$1.750 <span class="price-iva">+ IVA</span></span>
+            </div>
+            <div class="price-row best">
+              <span class="price-vol">× 150+ unidades ★</span>
+              <span class="price-val">$1.730 <span class="price-iva">+ IVA</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+            
+      <!-- QB COLORADO 2kg -->
+      <div class="prod-card">
+        <div class="prod-img-wrap" style="background:#111;padding:0;">
+          <img src="img05.jpg" style="width:100%;height:280px;object-fit:cover;object-position:center top;">
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Quebracho Colorado · Argentina</div>
+          <div class="prod-name">QB Colorado 2 kg</div>
+          <div class="prod-desc-short">Formato compacto de quebracho colorado. Alta densidad y larga duración. Ideal para retail, distribución minorista y consumo doméstico.</div>
+          <div class="price-table">
+            <div class="price-row">
+              <span class="price-vol">× 50 unidades</span>
+              <span class="price-val">.670 <span class="price-iva">+ IVA</span></span>
+            </div>
+            <div class="price-row">
+              <span class="price-vol">× 100 unidades</span>
+              <span class="price-val">.650 <span class="price-iva">+ IVA</span></span>
+            </div>
+            <div class="price-row best">
+              <span class="price-vol">× 150+ unidades ★</span>
+              <span class="price-val">.630 <span class="price-iva">+ IVA</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SACO QB BLANCO 15kg -->
+      <div class="prod-card">
+        <div class="prod-img-wrap" style="background:#0d0d0d;padding:0;">
+          <img src="img06.jpg" style="width:100%;height:240px;object-fit:cover;">
+          <div style="position:absolute;top:1rem;right:1rem;background:var(--gold);padding:0.3rem 0.6rem;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:2px;color:var(--black);">SACO 15KG</span>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Quebracho Blanco · Granel / Saco</div>
+          <div class="prod-name">Saco QB Blanco 15 kg</div>
+          <div class="prod-desc-short">Formato mayorista para distribuidores, restoranes y cadenas. Precio por kilogramo según volumen total.</div>
+          <div class="price-table">
+            <div class="price-row">
+              <span class="price-vol">× 150 kg (10 sacos)</span>
+              <span class="price-val">50 <span class="price-iva">+ IVA / kg</span></span>
+            </div>
+            <div class="price-row">
+              <span class="price-vol">× 300 kg (20 sacos)</span>
+              <span class="price-val">30 <span class="price-iva">+ IVA / kg</span></span>
+            </div>
+            <div class="price-row best">
+              <span class="price-vol">× 500+ kg ★</span>
+              <span class="price-val">10 <span class="price-iva">+ IVA / kg</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QB COLORADO GRANEL -->
+      <div class="prod-card">
+        <div class="prod-img-wrap" style="background:#0d0d0d;">
+          <img src="img08.jpg" style="width:100%;height:240px;object-fit:cover;object-position:center;">
+          <div style="position:absolute;top:1rem;right:1rem;background:var(--fire);padding:0.3rem 0.6rem;">
+            <span style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:2px;color:#fff;">GRANEL</span>
+          </div>
+        </div>
+        <div class="prod-body">
+          <div class="prod-tag">Quebracho Colorado · Granel</div>
+          <div class="prod-name">QB Colorado Granel</div>
+          <div class="prod-desc-short">A granel para grandes volúmenes. Ideal para distribuidores y operaciones industriales. Precio único por kilogramo.</div>
+          <div class="price-table">
+            <div class="price-row best" style="margin-top:0.5rem;">
+              <span class="price-vol">Precio único</span>
+              <span class="price-val" style="font-size:2rem;">70 <span class="price-iva">+ IVA / kg</span></span>
+            </div>
+            <div style="margin-top:1rem;padding:0.8rem;background:rgba(200,135,26,0.08);border:1px solid rgba(200,135,26,0.2);">
+              <span style="font-size:0.78rem;color:var(--muted);">Consultar volumen mínimo y condiciones de despacho.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /prod-grid -->
+
+    <!-- WHITE LABEL BANNER -->
+    <div style="margin-top:2px;background:var(--gold);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+      <div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;color:var(--black);">White Label disponible</div>
+        <div style="font-size:0.85rem;color:rgba(10,10,10,0.6);font-weight:400;margin-top:4px;">Envasado con tu marca. Consulta por volúmenes mínimos y condiciones.</div>
+      </div>
+      <a href="#contacto" class="btn" style="background:var(--black);color:var(--white);border:2px solid var(--black);flex-shrink:0;">Consultar white label</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img">
+        <img src="img08.jpg" alt="Productos La Carbonería">
+        <div class="about-img-label">
+          <small>Stock disponible</small>
+          <span>Inmediato</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-tag">Quiénes somos</p>
+        <h2 class="section-title">Carbón de<br>exportación<br>en Chile</h2>
+        <div class="section-line"></div>
+        <p>Somos importadores directos de carbón vegetal de quebracho argentino. Operamos con WE Trade SpA (RUT 76.796.173-1) y distribuimos a supermercados, cadenas de retail, restoranes y distribuidores en todo Chile.</p>
+        <p>Nuestro carbón proviene de bosques certificados en Argentina, con documentación de origen disponible para auditoría en todo momento.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-icon">🌿</div>
+            <div class="feature-text">
+              <strong>Certificado de origen</strong>
+              <span>Trazabilidad completa desde el bosque hasta la góndola</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">📦</div>
+            <div class="feature-text">
+              <strong>White Label</strong>
+              <span>Envasado con tu marca, código de barras y etiquetado completo</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🚛</div>
+            <div class="feature-text">
+              <strong>Despacho en 48–72 hrs</strong>
+              <span>Stock permanente en Santiago. Despacho a todo Chile.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🧾</div>
+            <div class="feature-text">
+              <strong>Facturación electrónica</strong>
+              <span>DTE completo, integración EDI para retail</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACIDAD -->
+<section id="capacidad">
+  <div class="cap-bg"></div>
+  <div class="cap-content">
+    <p class="section-tag">Nuestra operación</p>
+    <h2 class="section-title">Escala &<br>Capacidad</h2>
+    <div class="section-line"></div>
+    <div class="cap-grid">
+      <div class="cap-item">
+        <div class="cap-num">320T</div>
+        <div class="cap-label">Capacidad mensual</div>
+        <div class="cap-desc">Stock permanente disponible. Reposición continua desde Argentina vía importación directa.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-num">48H</div>
+        <div class="cap-label">Lead time despacho</div>
+        <div class="cap-desc">Preparación y despacho en 48 a 72 horas hábiles desde la confirmación del pedido.</div>
+      </div>
+      <div class="cap-item">
+        <div class="cap-num">+18</div>
+        <div class="cap-label">Años de experiencia</div>
+        <div class="cap-desc">Presencia consolidada en el mercado con clientes en retail, gastronomía y distribución mayorista.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAMION COMPLETO BANNER -->
+<section style="background:linear-gradient(135deg,#111 0%,#1a1200 50%,#111 100%);border-top:2px solid #c8871a;border-bottom:2px solid #c8871a;padding:4rem 2rem;text-align:center;">
+  <div style="max-width:800px;margin:0 auto;">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:#c8871a;margin-bottom:1rem;">▶ VOLUMEN MAYOR</p>
+    <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);color:#f5f4f0;letter-spacing:3px;margin-bottom:1rem;line-height:1.1;">COTIZACIÓN CAMIÓN COMPLETO<br><span style="color:#c8871a;">28 TONELADAS</span></h2>
+    <p style="font-family:'Barlow',sans-serif;font-size:1.05rem;color:#aaa;max-width:560px;margin:0 auto 2.5rem;">Para pedidos de camión completo ofrecemos precios especiales y coordinación logística directa. Contáctanos y te respondemos en menos de 24 horas.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="mailto:gfmingo@we-trade.cl" style="display:inline-flex;align-items:center;gap:0.5rem;background:#c8871a;color:#0a0a0a;font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:0.9rem 2rem;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#e09c2a'" onmouseout="this.style.background='#c8871a'">✉ gfmingo@we-trade.cl</a>
+      <a href="mailto:comercial@we-trade.cl" style="display:inline-flex;align-items:center;gap:0.5rem;border:2px solid #c8871a;color:#c8871a;font-family:'Barlow Condensed',sans-serif;font-size:0.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:0.9rem 2rem;text-decoration:none;transition:all 0.2s;" onmouseover="this.style.background='#c8871a';this.style.color='#0a0a0a'" onmouseout="this.style.background='transparent';this.style.color='#c8871a'">✉ comercial@we-trade.cl</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <p class="section-tag">Hablemos</p>
+        <h2 class="section-title">Cotiza<br>ahora</h2>
+        <div class="section-line"></div>
+        <p style="font-size:0.95rem;color:rgba(245,244,240,0.6);line-height:1.9;font-weight:300;max-width:380px;">Respuesta en menos de 24 horas hábiles. Atendemos distribuidores, retailers, restoranes y clientes mayoristas en todo Chile.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">✉</div>
+            <div>
+              <div class="contact-label">Email comercial</div>
+              <div class="contact-val">comercial@we-trade.cl</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
+            <div>
+              <div class="contact-label">WhatsApp / Teléfono</div>
+              <div class="contact-val">+56 9 2057 1175</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Ubicación</div>
+              <div class="contact-val">Santiago, Chile</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="handleForm(event)">
+          <div class="form-group">
+            <label class="form-label">Nombre / Empresa</label>
+            <input type="text" class="form-input" placeholder="Tu nombre o empresa" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="correo@empresa.cl" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Teléfono</label>
+            <input type="tel" class="form-input" placeholder="+56 9 XXXX XXXX">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Producto y volumen de interés</label>
+            <textarea class="form-input" placeholder="Ej: 200 bolsas QB Blanco 2,5kg, interesado en white label..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Enviar consulta →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">La Carbonería</div>
+      <p>Carbón de quebracho argentino premium. Importación directa para Chile.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#productos">Productos y precios</a></li>
+        <li><a href="#nosotros">Quiénes somos</a></li>
+        <li><a href="#capacidad">Capacidad</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-contact">
+      <h4>Contacto</h4>
+      <p>comercial@we-trade.cl<br>+56 9 2057 1175<br>Santiago, Chile<br><br>WE Trade SpA<br>RUT 76.796.173-1</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 La Carbonería · WE Trade SpA · Todos los derechos reservados</p>
+    <p>lacarboneriacl.cl</p>
+  </div>
+</footer>
+
+<script>
+function handleForm(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.btn-submit');
+  btn.textContent = '✓ Consulta enviada';
+  btn.style.background = '#2a7a2a';
+  setTimeout(() => {
+    btn.textContent = 'Enviar consulta →';
+    btn.style.background = '';
+    e.target.reset();
+  }, 3000);
+}
+</script>
+
+</body>
+</html>
