@@ -1,0 +1,10 @@
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Borradores y copias que no deben publicarse
+*.zip
+*(1).html
+*(2).html
+*(3).html
+borradores/
