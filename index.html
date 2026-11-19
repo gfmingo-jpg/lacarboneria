@@ -3,7 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Carbonería — Carbón Premium Argentino</title>
+<title>Carbón de Quebracho por Mayor en Santiago | La Carbonería</title>
+<meta name="description" content="Importador directo de carbón de quebracho argentino. Proveedor mayorista con stock permanente en Santiago, despacho en 48–72 h y envasado con tu marca.">
+<link rel="canonical" href="https://lacarboneriacl.cl/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="La Carbonería">
+<meta property="og:url" content="https://lacarboneriacl.cl/">
+<meta property="og:title" content="Carbón de Quebracho por Mayor en Santiago | La Carbonería">
+<meta property="og:description" content="Importador directo de carbón de quebracho argentino. Stock permanente en Santiago, despacho en 48–72 h y envasado con tu marca.">
+<meta property="og:image" content="https://lacarboneriacl.cl/img/hero.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="669">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="img/hero.jpg">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -30,8 +47,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:cen
 .nav-links a:hover{color:var(--gold);}
 .nav-cta{background:var(--gold);color:var(--black)!important;padding:0.5rem 1.2rem;font-weight:800!important;letter-spacing:2px!important;transition:background 0.2s!important;}
 .nav-cta:hover{background:var(--gold2)!important;color:var(--black)!important;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:10px 4px;background:none;border:0;}
 .hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all 0.3s;}
+.hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+a:focus-visible,button:focus-visible{outline:2px solid var(--gold2);outline-offset:3px;}
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;}
@@ -93,11 +114,11 @@ section{padding:5rem 2.5rem;}
 .prod-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.3s;}
 .prod-card:hover::before{transform:scaleX(1);}
 .prod-img-wrap{background:var(--grey2);height:280px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:1.5rem;position:relative;}
-.prod-img-wrap img{max-height:240px;max-width:90%;object-fit:contain;transition:transform 0.4s ease;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));}
+.prod-img-wrap img{width:auto;height:auto;max-height:240px;max-width:90%;object-fit:contain;transition:transform 0.4s ease;filter:drop-shadow(0 10px 30px rgba(0,0,0,0.5));}
 .prod-card:hover .prod-img-wrap img{transform:scale(1.05);}
 .prod-body{padding:1.5rem 2rem 2rem;flex:1;display:flex;flex-direction:column;}
 .prod-tag{font-family:"Barlow Condensed",sans-serif;font-size:0.65rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.5rem;}
-.prod-name{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;letter-spacing:2px;margin-bottom:0.5rem;line-height:1;}
+.prod-name{font-family:"Bebas Neue",sans-serif;font-size:1.8rem;font-weight:400;letter-spacing:2px;margin-bottom:0.5rem;line-height:1;}
 .prod-desc-short{font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:1.5rem;font-weight:300;}
 .price-table{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.2rem;display:flex;flex-direction:column;gap:0;}
 .price-row{display:flex;justify-content:space-between;align-items:center;padding:0.6rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
@@ -107,6 +128,20 @@ section{padding:5rem 2.5rem;}
 .price-row.best .price-vol{color:var(--gold);}
 .price-row.best .price-val{color:var(--gold);font-size:1.5rem;}
 .price-iva{font-family:"Barlow",sans-serif;font-size:0.65rem;color:var(--muted);font-weight:400;margin-left:4px;}
+.price-table{margin-bottom:1.5rem;}
+.prod-cta{margin-top:auto;display:block;text-align:center;border:1px solid var(--gold);color:var(--gold);padding:0.8rem 1rem;font-family:"Barlow Condensed",sans-serif;font-size:0.78rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;}
+.prod-cta:hover{background:var(--gold);color:var(--black);}
+.prod-card.wl{background:var(--gold);color:var(--black);}
+.prod-card.wl::before{display:none;}
+.prod-card.wl .prod-body{padding:2.5rem 2rem;justify-content:center;}
+.prod-card.wl .prod-tag{color:rgba(10,10,10,0.65);}
+.prod-card.wl .prod-name{font-size:2.8rem;line-height:0.95;margin-bottom:1rem;}
+.prod-card.wl .prod-desc-short{color:rgba(10,10,10,0.8);font-weight:400;font-size:0.95rem;}
+.wl-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem;margin-bottom:1.75rem;}
+.wl-list li{font-size:0.9rem;font-weight:500;padding-left:1.2rem;position:relative;}
+.wl-list li::before{content:"";position:absolute;left:0;top:0.6em;width:6px;height:6px;background:var(--black);}
+.prod-card.wl .prod-cta{margin-top:0;background:var(--black);border-color:var(--black);color:var(--white);}
+.prod-card.wl .prod-cta:hover{background:var(--grey2);border-color:var(--grey2);color:var(--white);}
 
 /* NOSOTROS */
 #nosotros{background:var(--grey);}
@@ -151,6 +186,14 @@ section{padding:5rem 2.5rem;}
 textarea.form-input{resize:vertical;min-height:120px;}
 .btn-submit{background:var(--gold);color:var(--black);border:none;padding:1rem 2rem;font-family:"Barlow Condensed",sans-serif;font-size:0.85rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;width:100%;}
 .btn-submit:hover{background:var(--gold2);}
+.contact-val a:hover{color:var(--gold);}
+select.form-input{appearance:none;-webkit-appearance:none;border-radius:0;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.5rem;}
+.form-actions{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.btn-submit.btn-wa{background:#25D366;color:#fff;}
+.btn-submit.btn-wa:hover{background:#1ebe5a;}
+.btn-submit:disabled{opacity:0.6;cursor:wait;}
+.form-note{font-size:0.78rem;color:var(--muted);line-height:1.6;}
+.form-status{font-size:0.88rem;color:var(--gold2);font-weight:500;min-height:1.4em;}
 
 /* FOOTER */
 footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:3rem 2.5rem;}
@@ -168,11 +211,18 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
 /* RESPONSIVE */
 @media(max-width:900px){
   nav{padding:1rem 1.5rem;}
-  .nav-links{display:none;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:rgba(10,10,10,0.98);border-bottom:1px solid rgba(200,135,26,0.3);padding:0.5rem 1.5rem 1.5rem;}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:1rem 0;font-size:0.85rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .nav-links a.nav-cta{text-align:center;margin-top:1rem;padding:0.9rem 1.2rem;border-bottom:0;}
   .hamburger{display:flex;}
+  .form-actions{grid-template-columns:1fr;}
   .hero-content{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;}
   .hero-visual{display:none;}
-  .hero-stats{gap:1.5rem;}
+  .hero-stats{gap:1rem;}
+  .stat{padding-left:0.7rem;}
+  .stat-num{font-size:1.9rem;}
+  .stat-label{font-size:0.62rem;letter-spacing:1px;}
   .prod-grid{grid-template-columns:1fr;}
   .prod-intro{grid-template-columns:1fr;gap:1.5rem;}
   .about-grid{grid-template-columns:1fr;}
@@ -184,23 +234,122 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
   section{padding:3.5rem 1.5rem;}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "WholesaleStore"],
+      "@id": "https://lacarboneriacl.cl/#empresa",
+      "name": "La Carbonería",
+      "legalName": "WE Trade SpA",
+      "taxID": "76.796.173-1",
+      "url": "https://lacarboneriacl.cl/",
+      "image": "https://lacarboneriacl.cl/img/hero.jpg",
+      "description": "Importador directo y proveedor mayorista de carbón vegetal de quebracho argentino en Chile. Stock permanente en Santiago con capacidad de 320 toneladas mensuales, despacho en 48 a 72 horas hábiles a todo el país y envasado a pedido con la marca del cliente (marca blanca).",
+      "email": "comercial@we-trade.cl",
+      "telephone": "+56920571175",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "El Olivar 2572",
+        "addressLocality": "La Pintana",
+        "addressRegion": "Región Metropolitana de Santiago",
+        "addressCountry": "CL"
+      },
+      "areaServed": { "@type": "Country", "name": "Chile" },
+      "contactPoint": [
+        { "@type": "ContactPoint", "contactType": "sales", "telephone": "+56920571175", "email": "comercial@we-trade.cl", "areaServed": "CL", "availableLanguage": "es" },
+        { "@type": "ContactPoint", "contactType": "sales", "telephone": "+56962438241", "areaServed": "CL", "availableLanguage": "es" }
+      ],
+      "brand": [
+        { "@type": "Brand", "name": "La Carbonería" },
+        { "@type": "Brand", "name": "El Algarrobo" }
+      ],
+      "sameAs": ["https://www.instagram.com/lacarboneriachile/"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://lacarboneriacl.cl/#web",
+      "url": "https://lacarboneriacl.cl/",
+      "name": "La Carbonería",
+      "inLanguage": "es-CL",
+      "publisher": { "@id": "https://lacarboneriacl.cl/#empresa" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://lacarboneriacl.cl/#marca-blanca",
+      "name": "Envasado a pedido y marca blanca de carbón vegetal",
+      "serviceType": "Envasado a pedido / marca blanca (white label)",
+      "description": "Envasado de carbón de quebracho argentino con la marca del cliente, con código de barras y etiquetado completo, en formatos personalizados para retail y distribución. Volúmenes mínimos y condiciones según cotización.",
+      "provider": { "@id": "https://lacarboneriacl.cl/#empresa" },
+      "areaServed": { "@type": "Country", "name": "Chile" }
+    },
+    {
+      "@type": "Product",
+      "name": "Carbón de quebracho blanco El Algarrobo 2,5 kg",
+      "description": "Bolsa de 2,5 kg de carbón de quebracho blanco argentino, no chispeante. Venta por mayor: precio neto por unidad, más IVA, según volumen (50, 100 o 150+ unidades).",
+      "image": "https://lacarboneriacl.cl/img/qb-blanco-2_5kg.jpg",
+      "brand": { "@type": "Brand", "name": "El Algarrobo" },
+      "countryOfOrigin": "AR",
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "CLP", "lowPrice": 1850, "highPrice": 1890, "offerCount": 3, "availability": "https://schema.org/InStock", "seller": { "@id": "https://lacarboneriacl.cl/#empresa" } }
+    },
+    {
+      "@type": "Product",
+      "name": "Carbón de quebracho colorado El Algarrobo 2,5 kg",
+      "description": "Bolsa de 2,5 kg de carbón de quebracho colorado argentino. Venta por mayor: precio neto por unidad, más IVA, según volumen (50, 100 o 150+ unidades).",
+      "image": "https://lacarboneriacl.cl/img/qb-colorado-2_5kg.jpg",
+      "brand": { "@type": "Brand", "name": "El Algarrobo" },
+      "countryOfOrigin": "AR",
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "CLP", "lowPrice": 1730, "highPrice": 1790, "offerCount": 3, "availability": "https://schema.org/InStock", "seller": { "@id": "https://lacarboneriacl.cl/#empresa" } }
+    },
+    {
+      "@type": "Product",
+      "name": "Carbón de quebracho colorado El Algarrobo 2 kg",
+      "description": "Bolsa de 2 kg de carbón de quebracho colorado argentino. Venta por mayor: precio neto por unidad, más IVA, según volumen (50, 100 o 150+ unidades).",
+      "image": "https://lacarboneriacl.cl/img/qb-colorado-2kg.jpg",
+      "brand": { "@type": "Brand", "name": "El Algarrobo" },
+      "countryOfOrigin": "AR",
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "CLP", "lowPrice": 1630, "highPrice": 1670, "offerCount": 3, "availability": "https://schema.org/InStock", "seller": { "@id": "https://lacarboneriacl.cl/#empresa" } }
+    },
+    {
+      "@type": "Product",
+      "name": "Saco de carbón de quebracho blanco La Carbonería 15 kg",
+      "description": "Saco mayorista de 15 kg de carbón de quebracho blanco argentino. Precio neto por kilogramo, más IVA, según volumen total (150 kg, 300 kg o 500+ kg).",
+      "image": "https://lacarboneriacl.cl/img/saco-qb-blanco-15kg.jpg",
+      "brand": { "@type": "Brand", "name": "La Carbonería" },
+      "countryOfOrigin": "AR",
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "CLP", "lowPrice": 810, "highPrice": 850, "offerCount": 3, "availability": "https://schema.org/InStock", "seller": { "@id": "https://lacarboneriacl.cl/#empresa" } }
+    },
+    {
+      "@type": "Product",
+      "name": "Carbón de quebracho colorado a granel",
+      "description": "Carbón de quebracho colorado argentino a granel para grandes volúmenes. Precio neto por kilogramo, más IVA, según volumen total (150 kg, 300 kg o 500+ kg).",
+      "image": "https://lacarboneriacl.cl/img/qb-colorado-granel.jpg",
+      "brand": { "@type": "Brand", "name": "La Carbonería" },
+      "countryOfOrigin": "AR",
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "CLP", "lowPrice": 650, "highPrice": 710, "offerCount": 3, "availability": "https://schema.org/InStock", "seller": { "@id": "https://lacarboneriacl.cl/#empresa" } }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">La Carbonería</a>
-  <div class="nav-links">
+  <div class="nav-links" id="nav-links">
     <a href="#productos">Productos</a>
     <a href="#nosotros">Nosotros</a>
     <a href="#capacidad">Capacidad</a>
     <a href="#contacto" class="nav-cta">Cotizar ahora</a>
   </div>
-  <div class="hamburger">
+  <button type="button" class="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
+<main>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
@@ -215,7 +364,7 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
         <span class="fire">Quebracho</span>
         <span>Premium</span>
       </h1>
-      <p class="hero-desc">Importado directamente desde Argentina. Mayor poder calorífico, cero chispas, larga duración. El carbón que eligen los profesionales.</p>
+      <p class="hero-desc">Importador directo y proveedor mayorista de carbón de quebracho argentino en Santiago de Chile. Stock permanente, venta por mayor y envasado a pedido con tu marca. Mayor poder calorífico, cero chispas, larga duración.</p>
       <div class="hero-stats">
         <div class="stat">
           <div class="stat-num">320T</div>
@@ -249,16 +398,16 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
     <span class="marquee-item">No Chispeante</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Carbón Argentino</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Calidad Exportación</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">120 Toneladas / Mes</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">White Label Disponible</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">320 Toneladas / Mes</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Marca Blanca Disponible</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Quebracho Colorado</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Certificado de Origen</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Quebracho Blanco</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">No Chispeante</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Carbón Argentino</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Calidad Exportación</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">120 Toneladas / Mes</span><span class="marquee-item marquee-sep">✦</span>
-    <span class="marquee-item">White Label Disponible</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">320 Toneladas / Mes</span><span class="marquee-item marquee-sep">✦</span>
+    <span class="marquee-item">Marca Blanca Disponible</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Quebracho Colorado</span><span class="marquee-item marquee-sep">✦</span>
     <span class="marquee-item">Certificado de Origen</span><span class="marquee-item marquee-sep">✦</span>
   </div>
@@ -274,7 +423,7 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
         <div class="section-line"></div>
       </div>
       <div>
-        <p class="prod-desc">Precios por unidad según volumen de compra, netos + IVA. Disponibilidad para envasado white label y formatos personalizados para retail y distribución.</p>
+        <p class="prod-desc">Precios por mayor según volumen de compra, netos + IVA. Envasado a pedido con tu marca (marca blanca) y formatos personalizados para retail y distribución.</p>
         <div class="vol-legend" style="margin-top:1.2rem;">
           <div class="vol-pill p50">50 uds</div>
           <div class="vol-pill p100">100 uds</div>
@@ -288,11 +437,11 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
       <!-- QB BLANCO 2.5kg -->
       <div class="prod-card">
         <div class="prod-img-wrap">
-          <img src="img/qb-blanco-2_5kg.jpg" alt="Quebracho Blanco 2,5kg">
+          <img src="img/qb-blanco-2_5kg.jpg" alt="Bolsa de carbón de quebracho blanco El Algarrobo de 2,5 kg" width="1200" height="669" loading="lazy">
         </div>
         <div class="prod-body">
-          <div class="prod-tag">Quebracho Blanco · Argentina</div>
-          <div class="prod-name">QB Blanco 2,5 kg</div>
+          <div class="prod-tag">Quebracho Blanco · Argentina · Marca El Algarrobo</div>
+          <h3 class="prod-name">QB Blanco 2,5 kg</h3>
           <div class="prod-desc-short">Mayor poder calorífico. No chispeante. Brasa uniforme y de larga duración. Ideal para parrilla profesional y retail.</div>
           <div class="price-table">
             <div class="price-row">
@@ -308,17 +457,18 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
               <span class="price-val">$1.850 <span class="price-iva">+ IVA</span></span>
             </div>
           </div>
+          <a class="prod-cta" href="https://wa.me/56920571175?text=Hola%2C%20quiero%20cotizar%20QB%20Blanco%202%2C5%20kg" target="_blank" rel="noopener">Cotizar este formato</a>
         </div>
       </div>
 
       <!-- QB COLORADO 2.5kg -->
       <div class="prod-card">
         <div class="prod-img-wrap">
-          <img src="img/qb-colorado-2_5kg.jpg" alt="Quebracho Colorado 2,5kg">
+          <img src="img/qb-colorado-2_5kg.jpg" alt="Bolsa de carbón de quebracho colorado El Algarrobo de 2,5 kg" width="1200" height="669" loading="lazy">
         </div>
         <div class="prod-body">
-          <div class="prod-tag">Quebracho Colorado · Argentina</div>
-          <div class="prod-name">QB Colorado 2,5 kg</div>
+          <div class="prod-tag">Quebracho Colorado · Argentina · Marca El Algarrobo</div>
+          <h3 class="prod-name">QB Colorado 2,5 kg</h3>
           <div class="prod-desc-short">Carbón de quebracho colorado, madera densa y de alta energía. Ideal para asados de larga duración y uso gastronómico.</div>
           <div class="price-table">
             <div class="price-row">
@@ -334,6 +484,7 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
               <span class="price-val">$1.730 <span class="price-iva">+ IVA</span></span>
             </div>
           </div>
+          <a class="prod-cta" href="https://wa.me/56920571175?text=Hola%2C%20quiero%20cotizar%20QB%20Colorado%202%2C5%20kg" target="_blank" rel="noopener">Cotizar este formato</a>
         </div>
       </div>
 
@@ -341,11 +492,11 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
       <!-- QB COLORADO 2kg -->
       <div class="prod-card">
         <div class="prod-img-wrap" style="background:#111;padding:0;">
-          <img src="img/qb-colorado-2kg.jpg" style="width:100%;height:280px;object-fit:cover;object-position:center top;">
+          <img src="img/qb-colorado-2kg.jpg" alt="Bolsas de carbón premium de quebracho El Algarrobo de 2 kg" width="1200" height="669" loading="lazy" style="width:100%;height:280px;object-fit:cover;object-position:center top;">
         </div>
         <div class="prod-body">
-          <div class="prod-tag">Quebracho Colorado · Argentina</div>
-          <div class="prod-name">QB Colorado 2 kg</div>
+          <div class="prod-tag">Quebracho Colorado · Argentina · Marca El Algarrobo</div>
+          <h3 class="prod-name">QB Colorado 2 kg</h3>
           <div class="prod-desc-short">Formato compacto de quebracho colorado. Alta densidad y larga duración. Ideal para retail, distribución minorista y consumo doméstico.</div>
           <div class="price-table">
             <div class="price-row">
@@ -361,20 +512,21 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
               <span class="price-val">$1.630 <span class="price-iva">+ IVA</span></span>
             </div>
           </div>
+          <a class="prod-cta" href="https://wa.me/56920571175?text=Hola%2C%20quiero%20cotizar%20QB%20Colorado%202%20kg" target="_blank" rel="noopener">Cotizar este formato</a>
         </div>
       </div>
 
       <!-- SACO QB BLANCO 15kg -->
       <div class="prod-card">
         <div class="prod-img-wrap" style="background:#0d0d0d;padding:0;">
-          <img src="img/saco-qb-blanco-15kg.jpg" style="width:100%;height:240px;object-fit:cover;">
+          <img src="img/saco-qb-blanco-15kg.jpg" alt="Saco de 15 kg de carbón de quebracho blanco argentino La Carbonería" width="1200" height="669" loading="lazy" style="width:100%;height:240px;object-fit:cover;">
           <div style="position:absolute;top:1rem;right:1rem;background:var(--gold);padding:0.3rem 0.6rem;">
             <span style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:2px;color:var(--black);">SACO 15KG</span>
           </div>
         </div>
         <div class="prod-body">
-          <div class="prod-tag">Quebracho Blanco · Granel / Saco</div>
-          <div class="prod-name">Saco QB Blanco 15 kg</div>
+          <div class="prod-tag">Quebracho Blanco · Saco mayorista · Marca La Carbonería</div>
+          <h3 class="prod-name">Saco QB Blanco 15 kg</h3>
           <div class="prod-desc-short">Formato mayorista para distribuidores, restoranes y cadenas. Precio por kilogramo según volumen total.</div>
           <div class="price-table">
             <div class="price-row">
@@ -390,28 +542,29 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
               <span class="price-val">$810 <span class="price-iva">+ IVA / kg</span></span>
             </div>
           </div>
+          <a class="prod-cta" href="https://wa.me/56920571175?text=Hola%2C%20quiero%20cotizar%20Saco%20QB%20Blanco%2015%20kg" target="_blank" rel="noopener">Cotizar este formato</a>
         </div>
       </div>
 
       <!-- QB COLORADO GRANEL -->
       <div class="prod-card">
         <div class="prod-img-wrap" style="background:#0d0d0d;">
-          <img src="img/qb-colorado-granel.jpg" style="width:100%;height:240px;object-fit:cover;object-position:center;">
+          <img src="img/qb-colorado-granel.jpg" alt="Carbón de quebracho colorado a granel para venta por mayor" width="1200" height="669" loading="lazy" style="width:100%;height:240px;object-fit:cover;object-position:center;">
           <div style="position:absolute;top:1rem;right:1rem;background:var(--fire);padding:0.3rem 0.6rem;">
             <span style="font-family:'Bebas Neue',sans-serif;font-size:0.85rem;letter-spacing:2px;color:#fff;">GRANEL</span>
           </div>
         </div>
         <div class="prod-body">
           <div class="prod-tag">Quebracho Colorado · Granel</div>
-          <div class="prod-name">QB Colorado Granel</div>
-          <div class="prod-desc-short">A granel para grandes volúmenes. Ideal para distribuidores y operaciones industriales. Precio único por kilogramo.</div>
+          <h3 class="prod-name">QB Colorado Granel</h3>
+          <div class="prod-desc-short">A granel para grandes volúmenes. Ideal para distribuidores y operaciones industriales. Se vende por kilogramo: el precio baja según el total de kilos del pedido.</div>
           <div class="price-table">
             <div class="price-row">
-              <span class="price-vol">× 150 kg (10 sacos)</span>
+              <span class="price-vol">× 150 kg</span>
               <span class="price-val">$710 <span class="price-iva">+ IVA / kg</span></span>
             </div>
             <div class="price-row">
-              <span class="price-vol">× 300 kg (20 sacos)</span>
+              <span class="price-vol">× 300 kg</span>
               <span class="price-val">$670 <span class="price-iva">+ IVA / kg</span></span>
             </div>
             <div class="price-row best">
@@ -419,19 +572,26 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
               <span class="price-val">$650 <span class="price-iva">+ IVA / kg</span></span>
             </div>
           </div>
+          <a class="prod-cta" href="https://wa.me/56920571175?text=Hola%2C%20quiero%20cotizar%20QB%20Colorado%20Granel" target="_blank" rel="noopener">Cotizar este formato</a>
+        </div>
+      </div>
+
+      <!-- MARCA BLANCA / ENVASADO A PEDIDO -->
+      <div class="prod-card wl" id="marca-blanca">
+        <div class="prod-body">
+          <div class="prod-tag">Envasado a pedido · White Label</div>
+          <h3 class="prod-name">Marca blanca:<br>tu marca propia</h3>
+          <div class="prod-desc-short">Envasamos carbón de quebracho con la marca de tu empresa, listo para góndola o distribución.</div>
+          <ul class="wl-list">
+            <li>Envasado con tu marca, código de barras y etiquetado completo</li>
+            <li>Formatos personalizados para retail y distribución</li>
+            <li>Volúmenes mínimos y condiciones según cotización</li>
+          </ul>
+          <a class="prod-cta" href="https://wa.me/56920571175?text=Hola%2C%20quiero%20cotizar%20envasado%20a%20pedido%20con%20mi%20marca%20(marca%20blanca)" target="_blank" rel="noopener">Consultar marca blanca</a>
         </div>
       </div>
 
     </div><!-- /prod-grid -->
-
-    <!-- WHITE LABEL BANNER -->
-    <div style="margin-top:2px;background:var(--gold);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
-      <div>
-        <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:3px;color:var(--black);">White Label disponible</div>
-        <div style="font-size:0.85rem;color:rgba(10,10,10,0.6);font-weight:400;margin-top:4px;">Envasado con tu marca. Consulta por volúmenes mínimos y condiciones.</div>
-      </div>
-      <a href="#contacto" class="btn" style="background:var(--black);color:var(--white);border:2px solid var(--black);flex-shrink:0;">Consultar white label</a>
-    </div>
 
   </div>
 </section>
@@ -441,7 +601,7 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-img">
-        <img src="img/qb-colorado-granel.jpg" alt="Productos La Carbonería">
+        <img src="img/qb-colorado-granel.jpg" alt="Stock paletizado de carbón de quebracho de La Carbonería" width="1200" height="669" loading="lazy">
         <div class="about-img-label">
           <small>Stock disponible</small>
           <span>Inmediato</span>
@@ -451,7 +611,8 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
         <p class="section-tag">Quiénes somos</p>
         <h2 class="section-title">Carbón de<br>exportación<br>en Chile</h2>
         <div class="section-line"></div>
-        <p>Somos importadores directos de carbón vegetal de quebracho argentino. Operamos con WE Trade SpA (RUT 76.796.173-1) y distribuimos a supermercados, cadenas de retail, restoranes y distribuidores en todo Chile.</p>
+        <p>Somos importadores directos y proveedores mayoristas de carbón vegetal de quebracho argentino. Operamos con WE Trade SpA (RUT 76.796.173-1), con bodega en La Pintana, Santiago, y distribuimos a supermercados, cadenas de retail, restoranes y distribuidores en todo Chile.</p>
+        <p>Vendemos con dos marcas propias: <strong>El Algarrobo</strong>, en bolsas de 2 y 2,5 kg para retail, y <strong>La Carbonería</strong>, en sacos de 15 kg para venta por mayor. También envasamos a pedido con la marca de cada cliente.</p>
         <p>Nuestro carbón proviene de bosques certificados en Argentina, con documentación de origen disponible para auditoría en todo momento.</p>
         <div class="feature-list">
           <div class="feature-item">
@@ -464,7 +625,7 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
           <div class="feature-item">
             <div class="feature-icon">📦</div>
             <div class="feature-text">
-              <strong>White Label</strong>
+              <strong>Marca blanca (White Label)</strong>
               <span>Envasado con tu marca, código de barras y etiquetado completo</span>
             </div>
           </div>
@@ -542,14 +703,14 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
             <div class="contact-icon">✉</div>
             <div>
               <div class="contact-label">Email comercial</div>
-              <div class="contact-val">comercial@we-trade.cl</div>
+              <div class="contact-val"><a href="mailto:comercial@we-trade.cl">comercial@we-trade.cl</a></div>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-icon">📱</div>
             <div>
               <div class="contact-label">WhatsApp / Teléfono</div>
-              <div class="contact-val">+56 9 2057 1175</div>
+              <div class="contact-val"><a href="tel:+56920571175">+56 9 2057 1175</a></div>
               <a href="https://wa.me/56920571175?text=Hola%2C%20me%20interesa%20cotizar%20carb%C3%B3n%20quebracho" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.4rem;background:#25D366;color:#fff;padding:0.35rem 0.8rem;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Escribir por WhatsApp
@@ -560,7 +721,7 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
             <div class="contact-icon">📞</div>
             <div>
               <div class="contact-label">WhatsApp / Teléfono</div>
-              <div class="contact-val">+56 9 6243 8241</div>
+              <div class="contact-val"><a href="tel:+56962438241">+56 9 6243 8241</a></div>
               <a href="https://wa.me/56962438241?text=Hola%2C%20me%20interesa%20cotizar%20carb%C3%B3n%20quebracho" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.4rem;background:#25D366;color:#fff;padding:0.35rem 0.8rem;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                 Escribir por WhatsApp
@@ -570,8 +731,8 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
           <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
-              <div class="contact-label">Ubicación</div>
-              <div class="contact-val">El Olivar 2572, La Pintana</div>
+              <div class="contact-label">Bodega</div>
+              <div class="contact-val">El Olivar 2572, La Pintana, Santiago</div>
               <a href="https://www.google.com/maps/dir/?api=1&destination=El+Olivar+2572,+La+Pintana,+Santiago,+Chile" target="_blank" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.4rem;background:var(--gold);color:var(--black);padding:0.35rem 0.8rem;font-family:'Barlow Condensed',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                 Cómo llegar
@@ -581,36 +742,56 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
         </div>
       </div>
       <div>
-        <form class="contact-form" onsubmit="handleForm(event)">
+        <!-- data-formspree-id: el código del formulario en formspree.io (lo que va después de /f/ en su dirección) -->
+        <form class="contact-form" id="form-cotizacion" data-formspree-id="xwvakoao">
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
           <div class="form-group">
-            <label class="form-label">Nombre / Empresa</label>
-            <input type="text" class="form-input" placeholder="Tu nombre o empresa" required>
+            <label class="form-label" for="f-nombre">Nombre / Empresa</label>
+            <input type="text" class="form-input" id="f-nombre" name="nombre" placeholder="Tu nombre o empresa" autocomplete="organization" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="correo@empresa.cl" required>
+            <label class="form-label" for="f-tipo">Tipo de cliente</label>
+            <select class="form-input" id="f-tipo" name="tipo">
+              <option value="">Selecciona una opción</option>
+              <option>Supermercado / Retail</option>
+              <option>Restaurante / Hotel</option>
+              <option>Distribuidor / Mayorista</option>
+              <option>Marca blanca / Envasado a pedido</option>
+              <option>Camión completo (28 toneladas)</option>
+              <option>Otro</option>
+            </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Teléfono</label>
-            <input type="tel" class="form-input" placeholder="+56 9 XXXX XXXX">
+            <label class="form-label" for="f-email">Email</label>
+            <input type="email" class="form-input" id="f-email" name="email" placeholder="correo@empresa.cl" autocomplete="email" required>
           </div>
           <div class="form-group">
-            <label class="form-label">Producto y volumen de interés</label>
-            <textarea class="form-input" placeholder="Ej: 200 bolsas QB Blanco 2,5kg, interesado en white label..."></textarea>
+            <label class="form-label" for="f-telefono">Teléfono</label>
+            <input type="tel" class="form-input" id="f-telefono" name="telefono" placeholder="+56 9 XXXX XXXX" autocomplete="tel">
           </div>
-          <button type="submit" class="btn-submit">Enviar consulta →</button>
+          <div class="form-group">
+            <label class="form-label" for="f-mensaje">Producto y volumen de interés</label>
+            <textarea class="form-input" id="f-mensaje" name="mensaje" placeholder="Ej: 200 bolsas QB Blanco 2,5 kg, interesado en marca blanca..." required></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn-submit" value="correo">Enviar consulta</button>
+            <button type="submit" class="btn-submit btn-wa" value="whatsapp">Enviar por WhatsApp</button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          <p class="form-note">Respondemos en menos de 24 horas hábiles. Usamos tus datos solo para responder esta cotización.</p>
         </form>
       </div>
     </div>
   </div>
 </section>
+</main>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="nav-logo">La Carbonería</div>
-      <p>Carbón de quebracho argentino premium. Importación directa para Chile.</p>
+      <p>Carbón de quebracho argentino premium. Importación directa y venta por mayor en Chile.</p>
     </div>
     <div class="footer-links">
       <h4>Navegación</h4>
@@ -623,10 +804,11 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
     </div>
     <div class="footer-contact">
       <h4>Contacto</h4>
-      <p>comercial@we-trade.cl<br>
+      <p><a href="mailto:comercial@we-trade.cl" style="color:var(--white);">comercial@we-trade.cl</a><br>
         <a href="https://wa.me/56920571175?text=Hola%2C%20me%20interesa%20cotizar%20carb%C3%B3n%20quebracho" target="_blank" style="color:#25D366;">+56 9 2057 1175 (WhatsApp)</a><br>
         <a href="https://wa.me/56962438241?text=Hola%2C%20me%20interesa%20cotizar%20carb%C3%B3n%20quebracho" target="_blank" style="color:#25D366;">+56 9 6243 8241 (WhatsApp)</a><br>
-        <a href="https://www.google.com/maps/dir/?api=1&destination=El+Olivar+2572,+La+Pintana,+Santiago,+Chile" target="_blank" style="color:var(--gold);">El Olivar 2572, La Pintana</a><br><br>WE Trade SpA<br>RUT 76.796.173-1</p>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=El+Olivar+2572,+La+Pintana,+Santiago,+Chile" target="_blank" style="color:var(--gold);">El Olivar 2572, La Pintana, Santiago</a><br>
+        <a href="https://www.instagram.com/lacarboneriachile/" target="_blank" rel="noopener" style="color:var(--white);">Instagram @lacarboneriachile</a><br><br>WE Trade SpA<br>RUT 76.796.173-1</p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -636,17 +818,80 @@ footer{background:var(--grey);border-top:1px solid rgba(200,135,26,0.2);padding:
 </footer>
 
 <script>
-function handleForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  btn.textContent = '✓ Consulta enviada';
-  btn.style.background = '#2a7a2a';
-  setTimeout(() => {
-    btn.textContent = 'Enviar consulta →';
-    btn.style.background = '';
-    e.target.reset();
-  }, 3000);
-}
+// Menú móvil
+(function () {
+  var burger = document.querySelector('.hamburger');
+  var links = document.getElementById('nav-links');
+  function setOpen(open) {
+    links.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  }
+  burger.addEventListener('click', function () {
+    setOpen(!links.classList.contains('open'));
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.closest('a')) setOpen(false);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') setOpen(false);
+  });
+})();
+
+// Formulario de cotización. "Enviar consulta" la manda por Formspree al correo comercial;
+// "Enviar por WhatsApp" la abre lista en WhatsApp. Si falta el código de Formspree
+// (data-formspree-id en el <form>), "Enviar consulta" abre el correo del cliente.
+(function () {
+  var WHATSAPP = '56920571175';
+  var CORREO = 'comercial@we-trade.cl';
+  var form = document.getElementById('form-cotizacion');
+  var estado = document.getElementById('form-status');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(form);
+    var campo = function (k) { return (d.get(k) || '').toString().trim(); };
+    var lineas = ['Hola, quiero cotizar carbón de quebracho.', '', 'Nombre / empresa: ' + campo('nombre')];
+    if (campo('tipo')) lineas.push('Tipo de cliente: ' + campo('tipo'));
+    if (campo('email')) lineas.push('Email: ' + campo('email'));
+    if (campo('telefono')) lineas.push('Teléfono: ' + campo('telefono'));
+    lineas.push('', 'Consulta: ' + campo('mensaje'));
+    var texto = lineas.join('\n');
+    var boton = e.submitter;
+    var asunto = 'Cotización web — ' + campo('nombre');
+    var formspreeId = (form.dataset.formspreeId || '').trim();
+
+    if (boton && boton.value === 'whatsapp') {
+      window.open('https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(texto), '_blank', 'noopener');
+      estado.textContent = 'Abrimos WhatsApp con tu consulta lista. Presiona Enviar para que nos llegue.';
+      return;
+    }
+
+    if (!formspreeId) {
+      window.location.href = 'mailto:' + CORREO +
+        '?subject=' + encodeURIComponent(asunto) + '&body=' + encodeURIComponent(texto);
+      estado.textContent = 'Abrimos tu correo con la consulta lista. Revísala y presiona Enviar.';
+      return;
+    }
+
+    d.append('_subject', asunto);
+    if (boton) boton.disabled = true;
+    estado.textContent = 'Enviando…';
+    fetch('https://formspree.io/f/' + formspreeId, {
+      method: 'POST',
+      body: d,
+      headers: { Accept: 'application/json' }
+    }).then(function (r) {
+      if (!r.ok) throw new Error('Formspree respondió ' + r.status);
+      form.reset();
+      estado.textContent = '✓ Consulta enviada. Te respondemos en menos de 24 horas hábiles.';
+    }).catch(function () {
+      estado.textContent = 'No pudimos enviar la consulta. Escríbenos por WhatsApp o a ' + CORREO + '.';
+    }).then(function () {
+      if (boton) boton.disabled = false;
+    });
+  });
+})();
 </script>
 
 </body>

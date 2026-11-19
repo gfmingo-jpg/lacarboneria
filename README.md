@@ -8,7 +8,16 @@ Sitio publicado en **https://lacarboneriacl.cl** (GitHub Pages, rama `main`).
 index.html   → la página completa (textos, precios, estilos)
 CNAME        → dominio lacarboneriacl.cl — NO borrar ni editar
 img/         → imágenes del sitio
+404.html     → página que se muestra cuando una dirección no existe
+favicon.svg  → ícono de la pestaña del navegador
+sitemap.xml  → lista de páginas para Google y Bing (agregar aquí cada página nueva)
+robots.txt   → permisos para buscadores; apunta al sitemap
+llms.txt     → resumen de la empresa para asistentes de IA
 ```
+
+**Formulario de contacto:** envía las consultas por Formspree (formspree.io) al correo comercial. El código del formulario va en `index.html`, en `data-formspree-id="..."` de la etiqueta `<form>`. Si ese campo queda vacío, el botón "Enviar consulta" abre el correo del visitante en vez de enviar.
+
+**Si cambia un precio, la capacidad o un dato de contacto**, hay que actualizarlo en tres lugares: el texto visible de `index.html`, el bloque `application/ld+json` al inicio de `index.html` y `llms.txt`.
 
 | Imagen | Dónde se usa |
 |---|---|

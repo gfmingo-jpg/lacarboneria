@@ -8,3 +8,6 @@ Thumbs.db
 *(2).html
 *(3).html
 borradores/
+
+# Configuración local de herramientas (no se publica)
+.claude/
